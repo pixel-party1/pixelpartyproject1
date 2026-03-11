@@ -53,7 +53,7 @@ Xcode → Settings → Source Control -> Accounts
 1. Click the **+** button
 2. Select **GitHub**
 3. Sign in with your GitHub account
-4. THE TOCKEN MUST HAVE REPO, USER AND ANDMIN:PUBLIC_KEY TICKED!!
+4. THE TOCKEN MUST HAVE REPO, USER AND ADMIN:PUBLIC_KEY TICKED!!
 
 ---
 
