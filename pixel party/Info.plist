@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Kenney Blocks.ttf</string>
+		<string>Kenney Future.ttf</string>
+		<string>Kenney Future Narrow.ttf</string>
+		<string>Kenney High.ttf</string>
+		<string>Kenney High Square.ttf</string>
+		<string>Kenney Mini.ttf</string>
+		<string>Kenney Mini Square.ttf</string>
+		<string>Kenney Mini Square Mono.ttf</string>
+		<string>Kenney Pixel.ttf</string>
+		<string>Kenney Pixel Square.ttf</string>
+		<string>Kenney Rocket.ttf</string>
+		<string>Kenney Rocket Square.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

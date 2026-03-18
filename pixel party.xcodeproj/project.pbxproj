@@ -58,6 +58,11 @@
 			path = "pixel partyUITests";
 			sourceTree = "<group>";
 		};
+		EE768FD52F6AEBEE00628770 /* Fonts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,7 @@
 				8FB3FA8F2F574A4C00DD421C /* pixel partyTests */,
 				8FB3FA992F574A4C00DD421C /* pixel partyUITests */,
 				8FB3FA742F574A4A00DD421C /* Products */,
+				EE768FD52F6AEBEE00628770 /* Fonts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				8FB3FA752F574A4A00DD421C /* pixel party */,
+				EE768FD52F6AEBEE00628770 /* Fonts */,
 			);
 			name = "pixel party";
 			packageProductDependencies = (
