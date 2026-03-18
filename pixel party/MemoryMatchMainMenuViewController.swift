@@ -15,10 +15,10 @@ class MemoryMatchMainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        memoryMatchTitleLabel.font = UIFont(name: "KenneyBlocks", size: 28)
+        memoryMatchTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 28)
         
     }
-    
+
 
     /*
     // MARK: - Navigation
