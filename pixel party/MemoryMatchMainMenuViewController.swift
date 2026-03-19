@@ -12,10 +12,37 @@ class MemoryMatchMainMenuViewController: UIViewController {
     
     @IBOutlet weak var memoryMatchTitleLabel: UILabel!
     
+    @IBOutlet weak var memoryMatchPlayButtonText: UIButton!
+    
+    
+    @IBOutlet weak var memoryMatchHowToPlayButtonText: UIButton!
+    
+    @IBAction func memoryMatchHomeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func memoryMatchPlayButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func memoryMatchHowToPlayButtonPressed(_ sender: Any) {
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         memoryMatchTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 28)
+        
+        // makes play button rounded
+        memoryMatchPlayButtonText.layer.cornerRadius = 25
+        memoryMatchPlayButtonText.clipsToBounds = true
+            
+        // makes how to play button rounded
+        memoryMatchHowToPlayButtonText.layer.cornerRadius = 25
+        memoryMatchHowToPlayButtonText.clipsToBounds = true
         
     }
 
