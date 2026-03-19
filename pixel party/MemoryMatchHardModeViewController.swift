@@ -8,7 +8,12 @@
 import UIKit
 
 class MemoryMatchHardModeViewController: UIViewController {
-
+    
+    
+    @IBAction func memoryMatchHardModeBackButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,7 +8,12 @@
 import UIKit
 
 class MemoryMatchMediumModeViewController: UIViewController {
-
+    
+    
+    @IBAction func memoryMatchMediumModeBackButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

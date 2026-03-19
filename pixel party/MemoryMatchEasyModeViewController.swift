@@ -8,7 +8,12 @@
 import UIKit
 
 class MemoryMatchEasyModeViewController: UIViewController {
-
+    
+    
+    @IBAction func memoryMatchEasyModeBackButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

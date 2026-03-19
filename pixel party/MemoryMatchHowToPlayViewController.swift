@@ -10,7 +10,7 @@ import UIKit
 class MemoryMatchHowToPlayViewController: UIViewController {
     
     
-    @IBAction func memoryMatchHowToPlayBackButtonTapped(_ sender: Any) {
+    @IBAction func memoryMatchHowToPlayBackButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     

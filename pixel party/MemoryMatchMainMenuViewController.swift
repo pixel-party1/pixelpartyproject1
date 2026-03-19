@@ -14,12 +14,12 @@ class MemoryMatchMainMenuViewController: UIViewController {
     
     @IBOutlet weak var memoryMatchPlayButtonText: UIButton!
     
+    @IBAction func memoryMatchHomeButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBOutlet weak var memoryMatchHowToPlayButtonText: UIButton!
     
-    @IBAction func memoryMatchHomeButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     
     @IBAction func memoryMatchPlayButtonPressed(_ sender: Any) {
