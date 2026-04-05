@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991.6030534351144" y="130.98591549295776"/>
+            <point key="canvasLocation" x="2027" y="132"/>
         </scene>
         <!--Game Select View Controller-->
         <scene sceneID="wKj-QQ-ZRq">
@@ -97,6 +98,9 @@
                                         <rect key="frame" x="12.999999999999993" y="330.66666666666663" width="116.33333333333331" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Slide Puzzle"/>
+                                        <connections>
+                                            <segue destination="aMq-0p-c0L" kind="presentation" identifier="toSlidingPuzzle" modalPresentationStyle="fullScreen" id="USJ-IN-SlW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -564,6 +568,168 @@
             </objects>
             <point key="canvasLocation" x="2027" y="865"/>
         </scene>
+        <!--Sliding Puzzle View Controller-->
+        <scene sceneID="6Qv-Jh-Sf6">
+            <objects>
+                <viewController id="aMq-0p-c0L" customClass="SlidingPuzzleViewController" customModule="pixel_party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVs-YO-oKO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFu-V4-dDC" userLabel="Tab Bar">
+                                <rect key="frame" x="16" y="763" width="361" height="75"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qhB-G9-GE5">
+                                        <rect key="frame" x="78" y="22" width="204" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Easy"/>
+                                            <segment title="Medium"/>
+                                            <segment title="Hard"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="difficultyChanged:" destination="aMq-0p-c0L" eventType="valueChanged" id="uYL-os-6q3"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHb-Ee-0Ws">
+                                        <rect key="frame" x="303" y="20" width="50" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="redoMoves"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.uturn.forward" catalog="system" renderingMode="hierarchical">
+                                                <hierarchicalColors>
+                                                    <color systemColor="labelColor"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="redoTapped:" destination="aMq-0p-c0L" eventType="touchUpInside" id="cyh-Xh-3td"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbO-ru-ngN">
+                                        <rect key="frame" x="8" y="20" width="50" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="undoMoves"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="arrow.uturn.backward" catalog="system" renderingMode="hierarchical">
+                                                <hierarchicalColors>
+                                                    <color systemColor="labelColor"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="undoTapped:" destination="aMq-0p-c0L" eventType="touchUpInside" id="78i-ZC-G51"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="ayI-Uw-spK"/>
+                                    <constraint firstAttribute="height" constant="75" id="cn5-04-9c2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-FT-gp7" userLabel="Board View">
+                                <rect key="frame" x="16" y="246" width="361" height="361"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="boardContainerView"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="0ga-wE-ogb"/>
+                                    <constraint firstAttribute="height" constant="361" id="IWk-NE-aAx"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeO-wm-cTf" userLabel="Navigation Bar">
+                                <rect key="frame" x="16" y="59" width="361" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ES4-Pr-S2n">
+                                        <rect key="frame" x="8" y="21" width="55" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="house.fill" catalog="system" renderingMode="hierarchical">
+                                                <hierarchicalColors>
+                                                    <color systemColor="labelColor"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <color key="baseForegroundColor" name="AccentColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="homeTapped:" destination="aMq-0p-c0L" eventType="touchUpInside" id="6Hd-kl-RJQ"/>
+                                            <action selector="toHome:" destination="JPt-Ck-IME" eventType="touchUpInside" id="1XW-jq-scT"/>
+                                            <action selector="toHome:" destination="SkY-fV-R0h" eventType="touchUpInside" id="yK0-0y-AF0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moves:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1x-i3-IoG">
+                                        <rect key="frame" x="130" y="17" width="101" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="movesLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-rd-2bP">
+                                        <rect key="frame" x="307" y="21" width="54" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="shuffle" catalog="system" renderingMode="hierarchical">
+                                                <hierarchicalColors>
+                                                    <color systemColor="labelColor"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="shuffleTapped:" destination="aMq-0p-c0L" eventType="touchUpInside" id="HrB-bS-i0P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="B0u-wv-sF2"/>
+                                    <constraint firstAttribute="width" constant="361" id="Rz5-vb-coh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8xE-L8-nWn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qeO-wm-cTf" firstAttribute="leading" secondItem="8xE-L8-nWn" secondAttribute="leading" constant="16" id="AFB-dw-u4t"/>
+                            <constraint firstItem="m3v-FT-gp7" firstAttribute="leading" secondItem="8xE-L8-nWn" secondAttribute="leading" constant="16" id="Hm1-Mt-pJm"/>
+                            <constraint firstItem="8xE-L8-nWn" firstAttribute="trailing" secondItem="m3v-FT-gp7" secondAttribute="trailing" constant="16" id="Jec-hE-yd6"/>
+                            <constraint firstItem="mFu-V4-dDC" firstAttribute="top" secondItem="m3v-FT-gp7" secondAttribute="bottom" constant="156" id="Krf-tm-QWz"/>
+                            <constraint firstAttribute="bottom" secondItem="mFu-V4-dDC" secondAttribute="bottom" constant="14" id="MFX-FD-V9s"/>
+                            <constraint firstItem="mFu-V4-dDC" firstAttribute="leading" secondItem="8xE-L8-nWn" secondAttribute="leading" constant="16" id="dRs-Sa-d3M"/>
+                            <constraint firstItem="qeO-wm-cTf" firstAttribute="top" secondItem="8xE-L8-nWn" secondAttribute="top" id="gfm-6r-2hm"/>
+                            <constraint firstItem="8xE-L8-nWn" firstAttribute="trailing" secondItem="qeO-wm-cTf" secondAttribute="trailing" constant="16" id="mcQ-vU-At3"/>
+                            <constraint firstItem="8xE-L8-nWn" firstAttribute="trailing" secondItem="mFu-V4-dDC" secondAttribute="trailing" constant="16" id="q4b-yY-1eA"/>
+                            <constraint firstItem="m3v-FT-gp7" firstAttribute="top" secondItem="qeO-wm-cTf" secondAttribute="bottom" constant="124" id="rUe-Ov-viu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardContainerView" destination="m3v-FT-gp7" id="ccl-Fb-lQ9"/>
+                        <outlet property="movesLabel" destination="D1x-i3-IoG" id="suN-Xy-ix7"/>
+                        <outlet property="redoButton" destination="bHb-Ee-0Ws" id="1OA-4C-Aom"/>
+                        <outlet property="undoButton" destination="wbO-ru-ngN" id="ICF-yD-eBH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I88-F9-fMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2026.7175572519084" y="1600"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="GUY-7v-6kJ">
             <objects>
@@ -686,42 +852,45 @@
             <point key="canvasLocation" x="2738.1679389312976" y="864.78873239436621"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="night background.jpg" width="129.60000610351562" height="86.400001525878906"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
+<resources>
+    <image name="arrow.uturn.backward" catalog="system" width="128" height="113"/>
+    <image name="arrow.uturn.forward" catalog="system" width="128" height="113"/>
+    <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
+    <image name="house.fill" catalog="system" width="128" height="104"/>
+    <image name="night background.jpg" width="129.60000610351562" height="86.400001525878906"/>
+    <image name="shuffle" catalog="system" width="128" height="95"/>
+    <namedColor name="AccentColor">
+        <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </namedColor>
+    <systemColor name="labelColor">
+        <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    </systemColor>
+    <systemColor name="secondaryLabelColor">
+        <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="systemBackgroundColor">
+        <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    </systemColor>
+    <systemColor name="systemGray2Color">
+        <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="systemMintColor">
+        <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="systemOrangeColor">
+        <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="systemPurpleColor">
+        <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="systemTealColor">
+        <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="systemYellowColor">
+        <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+    <systemColor name="tertiaryLabelColor">
+        <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+    </systemColor>
+</resources>
 </document>
