@@ -9,6 +9,13 @@ import UIKit
 
 class MazeGameEasyModeViewController: UIViewController {
 
+    // adding the buttons or links needed
+    @IBAction func easyModeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion:nil )
+    }
+    
+    
+    @IBOutlet weak var easyMazeBoardView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
