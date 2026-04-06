@@ -97,6 +97,90 @@ class MazeGameEasyModeViewController: UIViewController {
         
         easyMazeBoardView.addSubview(playerView)
     }
+    //swiping gesture recognistion
+    func setupSwipeGestures() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeUp.direction = .up
+        view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeDown.direction = .down
+        view.addGestureRecognizer(swipeDown)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+    }
+    //checking if the player ran into a wall
+    func isWall(row: Int, col: Int) -> Bool{
+        if row < 0 || row >= easyMaze.count{
+            return true
+        }
+        
+        let currentRow = Array(easyMaze[row])
+        
+        if col < 0 || col >= currentRow.count {
+            return true
+        }
+        
+        return currentRow[col] == "#"
+    }
+    // each individual slide function
+    func slideUp(){
+        while !isWall(row: playerRow - 1, col: playerCol) {
+            playerRow = playerRow - 1
+        }
+    }
+    
+    func slideDown(){
+        while !isWall(row: playerRow + 1, col: playerCol) {
+            playerRow = playerRow + 1
+        }
+    }
+    func slideLeft(){
+        while !isWall(row: playerRow, col: playerCol - 1) {
+            playerCol = playerCol - 1
+        }
+    }
+    
+    func slideRight(){
+        while !isWall(row: playerRow, col: playerCol + 1) {
+            playerCol = playerCol + 1
+        }
+    }
+    
+    // actually seeing if the player has reached the goal
+    func checkWin() {
+        let currentRow = Array(easyMaze[playerRow])
+        let character = currentRow[playerCol]
+        
+        if character == "G"{
+            let alert = UIAlertController(title: "YOU WIN!!", message: "Easy Maze complete", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        }
+    }
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer){
+        switch gesture.direction {
+        case .up:
+            slideUp()
+        case .down:
+            slideDown()
+        case .left:
+            slideLeft()
+        case .right:
+            slideRight()
+        default :
+            return
+        }
+        drawEasyMaze()
+        checkWin()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -107,6 +191,8 @@ class MazeGameEasyModeViewController: UIViewController {
         
         //function to find the start position
         findStartPosition()
+        //main game logic
+        setupSwipeGestures()
     }
     
 
