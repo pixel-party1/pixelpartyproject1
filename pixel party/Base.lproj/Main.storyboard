@@ -98,7 +98,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="bHV-B5-rxe" kind="presentation" modalPresentationStyle="fullScreen" id="Niv-tX-o8C"/>
+                                    <segue destination="bHV-B5-rxe" kind="presentation" modalPresentationStyle="fullScreen" id="J3P-pm-fpQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZx-TR-d2f">
@@ -132,6 +132,9 @@
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="mainMenuButtonTapped:" destination="zEf-Ef-FPI" eventType="touchUpInside" id="G5q-Cm-qBo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R2H-W5-Xkk"/>
@@ -164,15 +167,16 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="easyModeButtonTap:" destination="bHV-B5-rxe" eventType="touchUpInside" id="Tcr-84-XgQ"/>
+                                    <action selector="easyModeButtonTapped:" destination="bHV-B5-rxe" eventType="touchUpInside" id="eyI-kf-6Lh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dp5-Gr-c66"/>
                     <connections>
-                        <outlet property="easyBoardView" destination="8JN-vU-OF0" id="Eje-Qp-PfT"/>
+                        <outlet property="easyMazeBoardView" destination="8JN-vU-OF0" id="Yfg-0d-t8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9w-sv-gL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -222,6 +226,19 @@
                     <view key="view" contentMode="scaleToFill" id="fbA-UE-hrk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-Up-FMl">
+                                <rect key="frame" x="45" y="76" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="howToPlayButtonTapped:" destination="BdH-Lt-LCp" eventType="touchUpInside" id="UKB-d7-nGl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1eU-jX-CUc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
