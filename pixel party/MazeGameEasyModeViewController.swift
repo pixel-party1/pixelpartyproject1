@@ -20,7 +20,11 @@ class MazeGameEasyModeViewController: UIViewController {
     let easyMaze = [
         "#######",
         "#S.#.G#",
+        "#..#..#",
+        "#..#..#",
         "#.....#",
+        "#...#.#",
+        "#...#.#",
         "#######",
     ]
     
@@ -50,17 +54,23 @@ class MazeGameEasyModeViewController: UIViewController {
         let rows = easyMaze.count
         let cols = easyMaze[0].count
         
-        let tileWidth = easyMazeBoardView.bounds.width / CGFloat(cols)
-        let tileHeight = easyMazeBoardView.bounds.height / CGFloat(rows)
+        // makes the frame more square
+        let tileSize = min(easyMazeBoardView.bounds.width / CGFloat(cols), easyMazeBoardView.bounds.height / CGFloat(rows))
+        
+        let totalWidth = tileSize * CGFloat(cols)
+        let totalHeight = tileSize * CGFloat(rows)
+        
+        let xOffset = (easyMazeBoardView.bounds.width - totalWidth) / 2
+        let yOffset = (easyMazeBoardView.bounds.height - totalHeight) / 2
         
         for row in 0..<rows {
             let currentRow = Array(easyMaze[row])
             
             for col in 0..<cols {
-                let x = CGFloat(col) * tileWidth
-                let y = CGFloat(row) * tileHeight
+                let x = xOffset + CGFloat(col) * tileSize
+                let y = yOffset + CGFloat(row) * tileSize
                 
-                let tileView = UIView(frame: CGRect(x: x, y: y, width: tileWidth, height: tileHeight))
+                let tileView = UIView(frame: CGRect(x: x, y: y, width: tileSize, height: tileSize))
                 
                 let character = currentRow[col]
                 if character == "#"{
@@ -78,12 +88,12 @@ class MazeGameEasyModeViewController: UIViewController {
             }
         }
         
-        let playerX = CGFloat(playerCol) * tileWidth + 5
-        let playerY = CGFloat(playerRow) * tileHeight + 5
+        let playerX = xOffset + CGFloat(playerCol) * tileSize + 5
+        let playerY = yOffset + CGFloat(playerRow) * tileSize + 5
         
-        let playerView = UIView(frame: CGRect(x: playerX, y: playerY, width: tileWidth - 10, height: tileHeight - 10))
+        let playerView = UIView(frame: CGRect(x: playerX, y: playerY, width: tileSize - 10, height: tileSize - 10))
         playerView.backgroundColor = .systemBlue
-        playerView.layer.cornerRadius = min(tileWidth - 10, tileHeight - 10) / 2
+        playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
         
         easyMazeBoardView.addSubview(playerView)
     }
