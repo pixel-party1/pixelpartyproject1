@@ -159,9 +159,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="FRS-vX-6Pf" appends="YES" id="OfJ-yK-lHk"/>
-                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
                                 <rect key="frame" x="16" y="59" width="55" height="37"/>
@@ -184,7 +181,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9w-sv-gL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="FRS-vX-6Pf"/>
             </objects>
             <point key="canvasLocation" x="3927.480916030534" y="2313.3802816901411"/>
         </scene>
