@@ -13,6 +13,11 @@ class MazeGameEasyModeViewController: UIViewController {
     @IBAction func easyModeButtonTapped(_ sender: Any) {dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var mazeGameEasyModeTimer: UILabel!
+    
+    var timer: Timer?
+    var timerCount = 0
+    
     
     @IBOutlet weak var easyMazeBoardView: UIView!
     
@@ -189,10 +194,24 @@ class MazeGameEasyModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mazeGameEasyModeTimer.text = "00"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
         //function to find the start position
         findStartPosition()
         //main game logic
         setupSwipeGestures()
+    }
+    
+    @objc func timerFired() {
+        timerCount += 1
+        
+        let seconds = timerCount % 60
+        let minutes = timerCount / 60
+        
+        mazeGameEasyModeTimer.text = String(format: "%02d:%02d", minutes, seconds)
+
     }
     
 

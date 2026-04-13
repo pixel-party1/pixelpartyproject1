@@ -171,13 +171,24 @@
                                     <action selector="easyModeButtonTapped:" destination="bHV-B5-rxe" eventType="touchUpInside" id="eyI-kf-6Lh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-eJ-zhx">
+                                <rect key="frame" x="304" y="59" width="66.333333333333314" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="OZL-eJ-zhx" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="8jr-jx-GLD"/>
+                            <constraint firstItem="9Qr-K3-g4I" firstAttribute="trailing" secondItem="OZL-eJ-zhx" secondAttribute="trailing" constant="22.670000000000002" id="PyH-kr-UNQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dp5-Gr-c66"/>
                     <connections>
                         <outlet property="easyMazeBoardView" destination="8JN-vU-OF0" id="Yfg-0d-t8T"/>
+                        <outlet property="mazeGameEasyModeTimer" destination="OZL-eJ-zhx" id="eTk-XB-i8I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9w-sv-gL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -698,10 +709,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderboardCell" textLabel="j7O-Rk-vfR" detailTextLabel="saf-BD-oCB" style="IBUITableViewCellStyleValue1" id="s2e-gf-eIq">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="51"/>
+                                        <rect key="frame" x="0.0" y="50.333333969116211" width="361" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s2e-gf-eIq" id="AgM-Yj-bng">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j7O-Rk-vfR">
