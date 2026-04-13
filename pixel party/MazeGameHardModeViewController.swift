@@ -9,10 +9,6 @@ import UIKit
 
 class MazeGameHardModeViewController: UIViewController {
 
-    @IBAction func mazeGameHardModeButtonPressed(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

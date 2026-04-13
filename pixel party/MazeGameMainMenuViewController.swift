@@ -9,11 +9,6 @@ import UIKit
 
 class MazeGameMainMenuViewController: UIViewController {
 
-    @IBAction func mazeGameMainMenuButtonPressed(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

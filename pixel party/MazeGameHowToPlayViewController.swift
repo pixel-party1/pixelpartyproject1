@@ -9,11 +9,6 @@ import UIKit
 
 class MazeGameHowToPlayViewController: UIViewController {
 
-    @IBAction func mazeGameHowToPlayButtonPressed(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

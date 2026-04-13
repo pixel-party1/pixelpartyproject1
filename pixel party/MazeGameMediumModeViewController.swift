@@ -8,12 +8,7 @@
 import UIKit
 
 class MazeGameMediumModeViewController: UIViewController {
-    
-    
-    @IBAction func mazeGameMediumModeButtonPressed(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
