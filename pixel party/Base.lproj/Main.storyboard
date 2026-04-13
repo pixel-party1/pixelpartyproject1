@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,7 +98,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="bHV-B5-rxe" kind="presentation" modalPresentationStyle="fullScreen" id="Niv-tX-o8C"/>
+                                    <segue destination="bHV-B5-rxe" kind="presentation" modalPresentationStyle="fullScreen" id="J3P-pm-fpQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZx-TR-d2f">
@@ -126,6 +125,17 @@
                                     <segue destination="0Mm-cl-CvF" kind="presentation" modalPresentationStyle="fullScreen" id="7uK-8g-AqH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkp-kn-kFG">
+                                <rect key="frame" x="27" y="100" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="mainMenuButtonTapped:" destination="zEf-Ef-FPI" eventType="touchUpInside" id="G5q-Cm-qBo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R2H-W5-Xkk"/>
                         <color key="backgroundColor" red="0.62489913196265656" green="0.76942896842956543" blue="0.58375175410376223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -143,36 +153,72 @@
                     <view key="view" contentMode="scaleToFill" id="L7q-Bk-zh8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-vU-OF0">
+                                <rect key="frame" x="16" y="92" width="361" height="726"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
+                                <rect key="frame" x="16" y="59" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="easyModeButtonTapped:" destination="bHV-B5-rxe" eventType="touchUpInside" id="eyI-kf-6Lh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dp5-Gr-c66"/>
+                    <connections>
+                        <outlet property="easyMazeBoardView" destination="8JN-vU-OF0" id="Yfg-0d-t8T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9w-sv-gL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3929" y="2314"/>
+            <point key="canvasLocation" x="3927.480916030534" y="2313.3802816901411"/>
         </scene>
-        <!--View Controller-->
+        <!--Maze Game Medium Mode View Controller-->
         <scene sceneID="tbL-EZ-dKY">
             <objects>
-                <viewController id="hqC-dt-fz2" sceneMemberID="viewController">
+                <viewController id="hqC-dt-fz2" customClass="MazeGameMediumModeViewController" customModule="pixel_party" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a8T-Nn-4gn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="2nt-bq-i3e">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <viewLayoutGuide key="safeArea" id="rEy-XF-Hrj"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfa-6C-yL9">
+                                <rect key="frame" x="16" y="84" width="361" height="738"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-Wv-ev7">
+                                <rect key="frame" x="16" y="51" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="mediumModeButtonTapped:" destination="hqC-dt-fz2" eventType="touchUpInside" id="2DW-6u-dEh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EAr-5Q-OWf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
+                    <connections>
+                        <outlet property="mediumMazeBoardView" destination="Cfa-6C-yL9" id="yoM-t0-oor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cka-Th-zfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4756" y="2329"/>
+            <point key="canvasLocation" x="4754.9618320610689" y="2328.8732394366198"/>
         </scene>
         <!--Maze Game How To Play View Controller-->
         <scene sceneID="14d-n6-NLx">
@@ -181,6 +227,19 @@
                     <view key="view" contentMode="scaleToFill" id="fbA-UE-hrk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-Up-FMl">
+                                <rect key="frame" x="45" y="76" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="howToPlayButtonTapped:" destination="BdH-Lt-LCp" eventType="touchUpInside" id="UKB-d7-nGl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1eU-jX-CUc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -973,24 +1032,37 @@
             </objects>
             <point key="canvasLocation" x="2738.1679389312976" y="864.78873239436621"/>
         </scene>
-        <!--View Controller-->
+        <!--Maze Game Hard Mode View Controller-->
         <scene sceneID="Eiw-FJ-9JM">
             <objects>
-                <viewController id="0Mm-cl-CvF" sceneMemberID="viewController">
+                <viewController id="0Mm-cl-CvF" customClass="MazeGameHardModeViewController" customModule="pixel_party" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Nf-O2-Phi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="aO8-lN-jmu">
-                                <rect key="frame" x="-16" y="0.0" width="409" height="852"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <viewLayoutGuide key="safeArea" id="MWb-Na-UgF"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58d-EO-qFP">
+                                <rect key="frame" x="16" y="59" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="hardModeButtonTapped:" destination="0Mm-cl-CvF" eventType="touchUpInside" id="aUy-nP-gR9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ti0-hb-EZY">
+                                <rect key="frame" x="16" y="104" width="361" height="738"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cVX-nX-k0g"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
+                    <connections>
+                        <outlet property="hardMazeBoardView" destination="ti0-hb-EZY" id="U9A-mL-pWa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5h-0V-eM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -998,9 +1070,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.uturn.backward" catalog="system" width="128" height="113"/>
+        <image name="arrow.uturn.forward" catalog="system" width="128" height="113"/>
         <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="night background.jpg" width="129.60000610351562" height="86.400001525878906"/>
+        <image name="shuffle" catalog="system" width="128" height="95"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1021,6 +1096,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

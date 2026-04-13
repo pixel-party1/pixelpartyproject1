@@ -9,9 +9,15 @@ import UIKit
 
 class MazeGameHardModeViewController: UIViewController {
 
+    
+    @IBAction func hardModeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var hardMazeBoardView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
