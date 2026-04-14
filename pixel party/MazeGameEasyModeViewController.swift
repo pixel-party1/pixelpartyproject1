@@ -8,6 +8,10 @@
 import UIKit
 
 class MazeGameEasyModeViewController: UIViewController {
+    
+    var easyMaze: [String] = []
+    
+    var easyGameEnded = false
 
     // adding the buttons or links needed
     @IBAction func easyModeButtonTapped(_ sender: Any) {dismiss(animated: true, completion: nil)
@@ -22,16 +26,36 @@ class MazeGameEasyModeViewController: UIViewController {
     @IBOutlet weak var easyMazeBoardView: UIView!
     
     //maze definition (to be changed when logic is finished)
-    let easyMaze = [
+    let easyMazes = [[
         "#######",
         "#S.#.G#",
-        "#..#..#",
-        "#..#..#",
+        "##..#.#",
         "#.....#",
         "#...#.#",
-        "#...#.#",
+        "#.#..##",
+        "#.....#",
+        "#######",
+    ], [
+        "#######",
+        "###..##",
+        "##....#",
+        "##.##.#",
+        "#.....#",
+        "#.G#..#",
+        "#.#.S##",
+        "#######",
+    ],[
+        "#######",
+        "#S#...#",
+        "#..G..#",
+        "#..#..#",
+        "##.##.#",
+        "#.....#",
+        "#..#..#",
         "#######",
     ]
+    ]
+    
     
     // player position variables
     var playerRow = 0
@@ -54,7 +78,6 @@ class MazeGameEasyModeViewController: UIViewController {
     
    // maze drawing function
     func drawEasyMaze() {
-        //
         easyMazeBoardView.subviews.forEach({$0.removeFromSuperview()})
         
         let rows = easyMaze.count
@@ -82,11 +105,11 @@ class MazeGameEasyModeViewController: UIViewController {
                 
                 let character = currentRow[col]
                 if character == "#"{
-                    tileView.backgroundColor = .black
+                    tileView.backgroundColor = UIColor.black
                 } else if character == "G"{
-                    tileView.backgroundColor = .yellow
+                    tileView.backgroundColor = UIColor.yellow
                 } else {
-                    tileView.backgroundColor = .lightGray
+                    tileView.backgroundColor = UIColor.lightGray
                 }
                 
                 tileView.layer.borderWidth = 1
@@ -100,7 +123,7 @@ class MazeGameEasyModeViewController: UIViewController {
         let playerY = yOffset + CGFloat(playerRow) * tileSize + 5
         
         let playerView = UIView(frame: CGRect(x: playerX, y: playerY, width: tileSize - 10, height: tileSize - 10))
-        playerView.backgroundColor = .systemBlue
+        playerView.backgroundColor = UIColor.systemBlue
         playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
         
         easyMazeBoardView.addSubview(playerView)
@@ -123,6 +146,7 @@ class MazeGameEasyModeViewController: UIViewController {
     }
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        if easyGameEnded {return}
         slideUp()
         drawEasyMaze()
         checkWin()
@@ -130,14 +154,15 @@ class MazeGameEasyModeViewController: UIViewController {
     
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        if easyGameEnded {return}
         slideDown()
         drawEasyMaze()
         checkWin()
-        print("swipe detected")
     }
     
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if easyGameEnded {return}
         slideLeft()
         drawEasyMaze()
         checkWin()
@@ -145,6 +170,7 @@ class MazeGameEasyModeViewController: UIViewController {
     
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        if easyGameEnded {return}
         slideRight()
         drawEasyMaze()
         checkWin()
@@ -180,6 +206,8 @@ class MazeGameEasyModeViewController: UIViewController {
         let character = currentRow[playerCol]
         
         if character == "G"{
+            easyGameEnded = true
+            timer?.invalidate()
             let alert = UIAlertController(title: "YOU WIN!!", message: "Easy Maze complete", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -195,6 +223,9 @@ class MazeGameEasyModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let randomMaze = easyMazes.randomElement() {
+                easyMaze = randomMaze
+            }
         mazeGameEasyModeTimer.text = "00"
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
