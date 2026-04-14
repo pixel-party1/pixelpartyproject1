@@ -1103,6 +1103,13 @@
                                 <rect key="frame" x="16" y="104" width="361" height="738"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="G3l-Wz-9mW" appends="YES" id="vPc-Zx-ZgV"/>
+                                    <outletCollection property="gestureRecognizers" destination="dsV-Nn-BcN" appends="YES" id="xkX-c3-z5s"/>
+                                    <outletCollection property="gestureRecognizers" destination="fxk-fC-ruL" appends="YES" id="pOt-cu-Hb6"/>
+                                    <outletCollection property="gestureRecognizers" destination="6n2-xu-E3d" appends="YES" id="gnE-YV-g9E"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzm-KD-Bl8">
                                 <rect key="frame" x="310" y="59" width="66.333333333333314" height="33.666666666666657"/>
@@ -1124,6 +1131,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5h-0V-eM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="G3l-Wz-9mW">
+                    <connections>
+                        <action selector="swipeUp:" destination="0Mm-cl-CvF" id="xfs-T8-Dx4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="dsV-Nn-BcN">
+                    <connections>
+                        <action selector="swipeDown:" destination="0Mm-cl-CvF" id="Qym-pb-AZe"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="fxk-fC-ruL">
+                    <connections>
+                        <action selector="swipeLeft:" destination="0Mm-cl-CvF" id="2mk-YB-lpO"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="6n2-xu-E3d">
+                    <connections>
+                        <action selector="swipeRight:" destination="0Mm-cl-CvF" id="nmQ-lu-vvE"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5614.5038167938928" y="2312.6760563380285"/>
         </scene>

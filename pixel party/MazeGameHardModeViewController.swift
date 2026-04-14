@@ -141,6 +141,61 @@ class MazeGameHardModeViewController: UIViewController {
         }
     }
     
+    //swiping gesture assignment
+    
+    @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        if hardGameEnded {return}
+        slideUp()
+        drawHardMaze()
+        checkWin()
+    }
+    
+    
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        if hardGameEnded {return}
+        slideDown()
+        drawHardMaze()
+        checkWin()
+    }
+    
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if hardGameEnded {return}
+        slideLeft()
+        drawHardMaze()
+        checkWin()
+    }
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        if hardGameEnded {return}
+        slideRight()
+        drawHardMaze()
+        checkWin()
+    }
+    
+    // each individual slide function
+    func slideUp(){
+        while !isWall(row: playerRow - 1, col: playerCol) {
+            playerRow = playerRow - 1
+        }
+    }
+    
+    func slideDown(){
+        while !isWall(row: playerRow + 1, col: playerCol) {
+            playerRow = playerRow + 1
+        }
+    }
+    func slideLeft(){
+        while !isWall(row: playerRow, col: playerCol - 1) {
+            playerCol = playerCol - 1
+        }
+    }
+    
+    func slideRight(){
+        while !isWall(row: playerRow, col: playerCol + 1) {
+            playerCol = playerCol + 1
+        }
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
