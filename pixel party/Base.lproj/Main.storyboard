@@ -219,11 +219,22 @@
                                     <action selector="mediumModeButtonTapped:" destination="hqC-dt-fz2" eventType="touchUpInside" id="2DW-6u-dEh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vW-LC-5dL">
+                                <rect key="frame" x="310" y="48" width="66.333333333333314" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EAr-5Q-OWf"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="9vW-LC-5dL" firstAttribute="top" secondItem="a8T-Nn-4gn" secondAttribute="top" constant="48" id="1Uh-Ow-shI"/>
+                            <constraint firstItem="EAr-5Q-OWf" firstAttribute="trailing" secondItem="9vW-LC-5dL" secondAttribute="trailing" constant="16.670000000000002" id="fyq-Kd-ske"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="mazeGameMediumModeTimer" destination="9vW-LC-5dL" id="V1M-pr-8HH"/>
                         <outlet property="mediumMazeBoardView" destination="Cfa-6C-yL9" id="yoM-t0-oor"/>
                     </connections>
                 </viewController>
@@ -1067,12 +1078,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzm-KD-Bl8">
+                                <rect key="frame" x="310" y="59" width="66.333333333333314" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cVX-nX-k0g"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="yzm-KD-Bl8" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" id="FDe-mw-2sH"/>
+                            <constraint firstItem="cVX-nX-k0g" firstAttribute="trailing" secondItem="yzm-KD-Bl8" secondAttribute="trailing" constant="16.670000000000002" id="LQc-Vu-xXU"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="hardMazeBoardView" destination="ti0-hb-EZY" id="U9A-mL-pWa"/>
+                        <outlet property="mazeGameHardModeTimer" destination="yzm-KD-Bl8" id="qAj-3n-HpN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5h-0V-eM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
