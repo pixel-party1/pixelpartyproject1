@@ -287,14 +287,24 @@
                                     <action selector="howToPlayButtonTapped:" destination="BdH-Lt-LCp" eventType="touchUpInside" id="UKB-d7-nGl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Il-8V-OKY">
+                                <rect key="frame" x="45" y="210" width="302" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1eU-jX-CUc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="mazeGameHowTo" destination="8Il-8V-OKY" id="1vT-vA-9Nq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqN-7R-dw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5469" y="1579"/>
+            <point key="canvasLocation" x="5467.93893129771" y="1578.8732394366198"/>
         </scene>
         <!--Game Select View Controller-->
         <scene sceneID="wKj-QQ-ZRq">

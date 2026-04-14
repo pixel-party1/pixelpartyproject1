@@ -22,18 +22,18 @@ class MazeGameHardModeViewController: UIViewController {
     @IBOutlet weak var hardMazeBoardView: UIView!
     let hardMaze = [
         "############",
-        "#S..##....##",
-        "#....#G##..#",
+        "##.#...#...#",
+        "#....#...#.#",
+        "#..#.......#",
+        "#.....#.#..#",
+        "##..#.#..#.#",
+        "##...S...#.#",
+        "#.#.#...#..#",
+        "#....#.#..##",
         "#..#.....#.#",
-        "##....#..#.#",
-        "#...##..#..#",
-        "#....#.#.#.#",
-        "#.#......#.#",
-        "#....#..#..#",
-        "#.....#..#.#",
-        "#...#..#...#",
-        "##..#...#.##",
-        "#..........#",
+        "##.#...#...#",
+        "#G..#...#..#",
+        "#..#..#...##",
         "############",
         
     ]
@@ -134,7 +134,7 @@ class MazeGameHardModeViewController: UIViewController {
         if character == "G"{
             hardGameEnded = true
             timer?.invalidate()
-            let alert = UIAlertController(title: "YOU WIN!!", message: "Easy Maze complete", preferredStyle: .alert)
+            let alert = UIAlertController(title: "YOU WIN!!", message: "Hard Maze complete", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true)
