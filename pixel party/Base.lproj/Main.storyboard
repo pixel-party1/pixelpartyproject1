@@ -159,6 +159,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="a6k-Lm-tea" appends="YES" id="PVa-UR-09q"/>
+                                    <outletCollection property="gestureRecognizers" destination="E6b-ka-7rl" appends="YES" id="JIk-Ez-VRd"/>
+                                    <outletCollection property="gestureRecognizers" destination="Fzc-Sn-46M" appends="YES" id="i4h-kf-LjY"/>
+                                    <outletCollection property="gestureRecognizers" destination="FrR-yO-Gqe" appends="YES" id="vnS-pE-EK8"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
                                 <rect key="frame" x="16" y="59" width="55" height="37"/>
@@ -192,6 +198,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9w-sv-gL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="FrR-yO-Gqe">
+                    <connections>
+                        <action selector="swipeUp:" destination="bHV-B5-rxe" id="XAO-SN-Xa8"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="a6k-Lm-tea">
+                    <connections>
+                        <action selector="swipeDown:" destination="bHV-B5-rxe" id="BH8-bs-MnQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="E6b-ka-7rl">
+                    <connections>
+                        <action selector="swipeLeft:" destination="bHV-B5-rxe" id="80W-Tf-2Sk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Fzc-Sn-46M">
+                    <connections>
+                        <action selector="swipeRight:" destination="bHV-B5-rxe" id="zyj-1u-iQw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3927.480916030534" y="2313.3802816901411"/>
         </scene>
@@ -709,10 +735,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderboardCell" textLabel="j7O-Rk-vfR" detailTextLabel="saf-BD-oCB" style="IBUITableViewCellStyleValue1" id="s2e-gf-eIq">
-                                        <rect key="frame" x="0.0" y="50.333333969116211" width="361" height="52"/>
+                                        <rect key="frame" x="0.0" y="50" width="361" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s2e-gf-eIq" id="AgM-Yj-bng">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j7O-Rk-vfR">

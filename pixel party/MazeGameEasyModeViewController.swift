@@ -54,17 +54,20 @@ class MazeGameEasyModeViewController: UIViewController {
     
    // maze drawing function
     func drawEasyMaze() {
+        //
         easyMazeBoardView.subviews.forEach({$0.removeFromSuperview()})
         
         let rows = easyMaze.count
         let cols = easyMaze[0].count
         
         // makes the frame more square
+        // CGFloat - used in iOS for sizes, positions and layout measurements. It measures items on screen so in this case it would measure the maze board
         let tileSize = min(easyMazeBoardView.bounds.width / CGFloat(cols), easyMazeBoardView.bounds.height / CGFloat(rows))
         
         let totalWidth = tileSize * CGFloat(cols)
         let totalHeight = tileSize * CGFloat(rows)
         
+        //xOffset and yOffset are used to centre the maze inside easyMazeBoardView. They calculate the extra space left in the view and divide it by 2 so the maze appears centred both horizontally and vertically.
         let xOffset = (easyMazeBoardView.bounds.width - totalWidth) / 2
         let yOffset = (easyMazeBoardView.bounds.height - totalHeight) / 2
         
@@ -103,23 +106,7 @@ class MazeGameEasyModeViewController: UIViewController {
         easyMazeBoardView.addSubview(playerView)
     }
     //swiping gesture recognistion
-    func setupSwipeGestures() {
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeUp.direction = .up
-        view.addGestureRecognizer(swipeUp)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeDown.direction = .down
-        view.addGestureRecognizer(swipeDown)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeLeft.direction = .left
-        view.addGestureRecognizer(swipeLeft)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        swipeRight.direction = .right
-        view.addGestureRecognizer(swipeRight)
-    }
+    
     //checking if the player ran into a wall
     func isWall(row: Int, col: Int) -> Bool{
         if row < 0 || row >= easyMaze.count{
@@ -134,6 +121,35 @@ class MazeGameEasyModeViewController: UIViewController {
         
         return currentRow[col] == "#"
     }
+    
+    @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        slideUp()
+        drawEasyMaze()
+        checkWin()
+    }
+    
+    
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        slideDown()
+        drawEasyMaze()
+        checkWin()
+        print("swipe detected")
+    }
+    
+    
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        slideLeft()
+        drawEasyMaze()
+        checkWin()
+    }
+    
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        slideRight()
+        drawEasyMaze()
+        checkWin()
+    }
+    
     // each individual slide function
     func slideUp(){
         while !isWall(row: playerRow - 1, col: playerCol) {
@@ -170,22 +186,7 @@ class MazeGameEasyModeViewController: UIViewController {
             present(alert, animated: true)
         }
     }
-    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer){
-        switch gesture.direction {
-        case .up:
-            slideUp()
-        case .down:
-            slideDown()
-        case .left:
-            slideLeft()
-        case .right:
-            slideRight()
-        default :
-            return
-        }
-        drawEasyMaze()
-        checkWin()
-    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -200,8 +201,6 @@ class MazeGameEasyModeViewController: UIViewController {
         
         //function to find the start position
         findStartPosition()
-        //main game logic
-        setupSwipeGestures()
     }
     
     @objc func timerFired() {
