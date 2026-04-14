@@ -8,7 +8,7 @@
 import UIKit
 
 class MazeGameMediumModeViewController: UIViewController {
-    var medGameEnded = false
+    var mediumGameEnded = false
     var mediumMaze: [String] = []
     
     @IBAction func mediumModeButtonTapped(_ sender: Any) {
@@ -125,18 +125,103 @@ class MazeGameMediumModeViewController: UIViewController {
         mediumMazeBoardView.addSubview(playerView)
     }
     
+    // wall check
+    func isWall(row: Int, col: Int) -> Bool{
+        if row < 0 || row >= mediumMaze.count{
+            return true
+        }
+        
+        let currentRow = Array(mediumMaze[row])
+        
+        if col < 0 || col >= currentRow.count {
+            return true
+        }
+        
+        return currentRow[col] == "#"
+    }
+    
+    //
+    func checkWin() {
+        let currentRow = Array(mediumMaze[playerRow])
+        let character = currentRow[playerCol]
+        
+        if character == "G"{
+            mediumGameEnded = true
+            timer?.invalidate()
+            let alert = UIAlertController(title: "YOU WIN!!", message: "Medium Maze complete", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        }
+    }
+    
+    @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        if mediumGameEnded {return}
+        slideUp()
+        drawMediumMaze()
+        checkWin()
+    }
+    
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        if mediumGameEnded {return}
+        slideDown()
+        drawMediumMaze()
+        checkWin()
+    }
+    
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if mediumGameEnded {return}
+        slideLeft()
+        drawMediumMaze()
+        checkWin()
+    }
+    
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        if mediumGameEnded {return}
+        slideRight()
+        drawMediumMaze()
+        checkWin()
+    }
+    
+    // each individual slide function
+    func slideUp(){
+        while !isWall(row: playerRow - 1, col: playerCol) {
+            playerRow = playerRow - 1
+        }
+    }
+    
+    func slideDown(){
+        while !isWall(row: playerRow + 1, col: playerCol) {
+            playerRow = playerRow + 1
+        }
+    }
+    func slideLeft(){
+        while !isWall(row: playerRow, col: playerCol - 1) {
+            playerCol = playerCol - 1
+        }
+    }
+    
+    func slideRight(){
+        while !isWall(row: playerRow, col: playerCol + 1) {
+            playerCol = playerCol + 1
+        }
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         drawMediumMaze()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let randomMaze = mediumMazes.randomElement() {
                 mediumMaze = randomMaze
             }
+        findStartPosition()
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
 
