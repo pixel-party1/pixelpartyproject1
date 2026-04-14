@@ -128,7 +128,6 @@ class MazeGameEasyModeViewController: UIViewController {
         
         easyMazeBoardView.addSubview(playerView)
     }
-    //swiping gesture recognistion
     
     //checking if the player ran into a wall
     func isWall(row: Int, col: Int) -> Bool{
@@ -144,6 +143,8 @@ class MazeGameEasyModeViewController: UIViewController {
         
         return currentRow[col] == "#"
     }
+    
+    //swiping gesture recognistion
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         if easyGameEnded {return}

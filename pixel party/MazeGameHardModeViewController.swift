@@ -8,7 +8,7 @@
 import UIKit
 
 class MazeGameHardModeViewController: UIViewController {
-
+    var hardGameEnded = false
     
     @IBAction func hardModeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -109,6 +109,36 @@ class MazeGameHardModeViewController: UIViewController {
         playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
         
         hardMazeBoardView.addSubview(playerView)
+    }
+    
+    // wall check
+    func isWall(row: Int, col: Int) -> Bool{
+        if row < 0 || row >= hardMaze.count{
+            return true
+        }
+        
+        let currentRow = Array(hardMaze[row])
+        
+        if col < 0 || col >= currentRow.count {
+            return true
+        }
+        
+        return currentRow[col] == "#"
+    }
+    
+    //
+    func checkWin() {
+        let currentRow = Array(hardMaze[playerRow])
+        let character = currentRow[playerCol]
+        
+        if character == "G"{
+            hardGameEnded = true
+            timer?.invalidate()
+            let alert = UIAlertController(title: "YOU WIN!!", message: "Easy Maze complete", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        }
     }
     
     override func viewDidLayoutSubviews() {
