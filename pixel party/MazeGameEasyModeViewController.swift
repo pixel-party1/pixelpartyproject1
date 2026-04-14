@@ -12,7 +12,13 @@ class MazeGameEasyModeViewController: UIViewController {
     var easyMaze: [String] = []
     
     var easyGameEnded = false
-
+    
+    var moveCount = 0
+    var lastPlayerRow = 0
+    var lastPlayerCol = 0
+    
+    @IBOutlet weak var mazeGameEasyModeMoveCounter: UILabel!
+    
     // adding the buttons or links needed
     @IBAction func easyModeButtonTapped(_ sender: Any) {dismiss(animated: true, completion: nil)
     }
@@ -127,6 +133,16 @@ class MazeGameEasyModeViewController: UIViewController {
         playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
         
         easyMazeBoardView.addSubview(playerView)
+        
+        // check if player moved
+        if playerRow != lastPlayerRow || playerCol != lastPlayerCol {
+            moveCount += 1
+            updateMoveCounter()
+        }
+
+        // update last position
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
     }
     
     //checking if the player ran into a wall
@@ -224,6 +240,12 @@ class MazeGameEasyModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        moveCount = 0
+        updateMoveCounter()
+
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
         if let randomMaze = easyMazes.randomElement() {
                 easyMaze = randomMaze
             }
@@ -233,6 +255,9 @@ class MazeGameEasyModeViewController: UIViewController {
         
         //function to find the start position
         findStartPosition()
+        
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
     }
     
     @objc func timerFired() {
@@ -245,6 +270,9 @@ class MazeGameEasyModeViewController: UIViewController {
 
     }
     
+    func updateMoveCounter() {
+        mazeGameEasyModeMoveCounter.text = "Moves: \(moveCount)"
+    }
 
     /*
     // MARK: - Navigation
