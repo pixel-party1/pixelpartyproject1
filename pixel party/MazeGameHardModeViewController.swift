@@ -8,7 +8,14 @@
 import UIKit
 
 class MazeGameHardModeViewController: UIViewController {
+    
     var hardGameEnded = false
+    
+    var moveCount = 0
+    var lastPlayerRow = 0
+    var lastPlayerCol = 0
+    
+    @IBOutlet weak var mazeGameHardModeMoveCounter: UILabel!
     
     @IBAction func hardModeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -98,6 +105,16 @@ class MazeGameHardModeViewController: UIViewController {
                 tileView.layer.borderColor = UIColor.black.cgColor
                 
                 hardMazeBoardView.addSubview(tileView)
+                
+                // check if player moved
+                if playerRow != lastPlayerRow || playerCol != lastPlayerCol {
+                    moveCount += 1
+                    updateMoveCounter()
+                }
+
+                // update last position
+                lastPlayerRow = playerRow
+                lastPlayerCol = playerCol
             }
         }
         
@@ -204,7 +221,18 @@ class MazeGameHardModeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        moveCount = 0
+        updateMoveCounter()
+
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
         findStartPosition()
+        
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
         drawHardMaze()
         // Do any additional setup after loading the view.
         
@@ -219,6 +247,10 @@ class MazeGameHardModeViewController: UIViewController {
         
         mazeGameHardModeTimer.text = String(format: "%02d:%02d", minutes, seconds)
 
+    }
+    
+    func updateMoveCounter() {
+        mazeGameHardModeMoveCounter.text = "Moves: \(moveCount)"
     }
     
 

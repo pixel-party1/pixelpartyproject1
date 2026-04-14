@@ -166,9 +166,8 @@
                                     <outletCollection property="gestureRecognizers" destination="FrR-yO-Gqe" appends="YES" id="vnS-pE-EK8"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
-                                <rect key="frame" x="16" y="59" width="55" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
+                                <rect key="frame" x="15.999999999999996" y="59" width="54.666666666666657" height="34.333333333333343"/>
                                 <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
@@ -183,17 +182,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1F-7s-AyL">
+                                <rect key="frame" x="164.66666666666666" y="59" width="64" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="vDP-nQ-MDp" firstAttribute="leading" secondItem="9Qr-K3-g4I" secondAttribute="leading" constant="16" id="7cl-cy-MOb"/>
                             <constraint firstItem="OZL-eJ-zhx" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="8jr-jx-GLD"/>
+                            <constraint firstItem="O1F-7s-AyL" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="KlY-9A-6z9"/>
                             <constraint firstItem="9Qr-K3-g4I" firstAttribute="trailing" secondItem="OZL-eJ-zhx" secondAttribute="trailing" constant="22.670000000000002" id="PyH-kr-UNQ"/>
+                            <constraint firstItem="vDP-nQ-MDp" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="hqn-cW-32N"/>
+                            <constraint firstItem="O1F-7s-AyL" firstAttribute="centerX" secondItem="L7q-Bk-zh8" secondAttribute="centerX" id="x7P-VF-fpf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dp5-Gr-c66"/>
                     <connections>
                         <outlet property="easyMazeBoardView" destination="8JN-vU-OF0" id="Yfg-0d-t8T"/>
+                        <outlet property="mazeGameEasyModeMoveCounter" destination="O1F-7s-AyL" id="oi2-2t-THI"/>
                         <outlet property="mazeGameEasyModeTimer" destination="OZL-eJ-zhx" id="eTk-XB-i8I"/>
                     </connections>
                 </viewController>
@@ -234,9 +244,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-Wv-ev7">
-                                <rect key="frame" x="16" y="51" width="55" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-Wv-ev7">
+                                <rect key="frame" x="16" y="51" width="55" height="34.333333333333343"/>
                                 <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
@@ -256,6 +265,8 @@
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="9vW-LC-5dL" firstAttribute="top" secondItem="a8T-Nn-4gn" secondAttribute="top" constant="48" id="1Uh-Ow-shI"/>
+                            <constraint firstItem="kyF-Wv-ev7" firstAttribute="top" secondItem="a8T-Nn-4gn" secondAttribute="top" constant="51" id="B9P-i0-5xo"/>
+                            <constraint firstItem="kyF-Wv-ev7" firstAttribute="leading" secondItem="EAr-5Q-OWf" secondAttribute="leading" constant="16" id="NV8-VG-9IU"/>
                             <constraint firstItem="EAr-5Q-OWf" firstAttribute="trailing" secondItem="9vW-LC-5dL" secondAttribute="trailing" constant="16.670000000000002" id="fyq-Kd-ske"/>
                         </constraints>
                     </view>
@@ -756,10 +767,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderboardCell" textLabel="j7O-Rk-vfR" detailTextLabel="saf-BD-oCB" style="IBUITableViewCellStyleValue1" id="s2e-gf-eIq">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="51"/>
+                                        <rect key="frame" x="0.0" y="50.333333969116211" width="361" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s2e-gf-eIq" id="AgM-Yj-bng">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j7O-Rk-vfR">
@@ -1098,9 +1109,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58d-EO-qFP">
-                                <rect key="frame" x="16" y="59" width="55" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58d-EO-qFP">
+                                <rect key="frame" x="16" y="59" width="55" height="34.333333333333343"/>
                                 <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
@@ -1127,16 +1137,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1Y-fk-HlJ">
+                                <rect key="frame" x="164.66666666666666" y="60" width="64" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cVX-nX-k0g"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
+                            <constraint firstItem="B1Y-fk-HlJ" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" constant="1" id="42N-cn-06w"/>
                             <constraint firstItem="yzm-KD-Bl8" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" id="FDe-mw-2sH"/>
                             <constraint firstItem="cVX-nX-k0g" firstAttribute="trailing" secondItem="yzm-KD-Bl8" secondAttribute="trailing" constant="16.670000000000002" id="LQc-Vu-xXU"/>
+                            <constraint firstItem="B1Y-fk-HlJ" firstAttribute="centerX" secondItem="1Nf-O2-Phi" secondAttribute="centerX" id="WSS-9g-J6C"/>
+                            <constraint firstItem="B1Y-fk-HlJ" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" constant="1" id="bmM-23-PwZ"/>
+                            <constraint firstItem="B1Y-fk-HlJ" firstAttribute="centerX" secondItem="1Nf-O2-Phi" secondAttribute="centerX" id="gWU-TJ-a7C"/>
+                            <constraint firstItem="58d-EO-qFP" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" id="lZQ-IL-1Yz"/>
+                            <constraint firstItem="58d-EO-qFP" firstAttribute="leading" secondItem="cVX-nX-k0g" secondAttribute="leading" constant="16" id="sE3-Dd-96p"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hardMazeBoardView" destination="ti0-hb-EZY" id="U9A-mL-pWa"/>
+                        <outlet property="mazeGameHardModeMoveCounter" destination="B1Y-fk-HlJ" id="e7e-Yh-o4i"/>
                         <outlet property="mazeGameHardModeTimer" destination="yzm-KD-Bl8" id="qAj-3n-HpN"/>
                     </connections>
                 </viewController>
