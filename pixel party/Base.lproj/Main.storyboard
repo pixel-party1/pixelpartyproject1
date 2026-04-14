@@ -523,10 +523,10 @@
                                     <action selector="memoryMatchMediumModeBackButtonPressed:" destination="X5H-NC-zPp" eventType="touchUpInside" id="ooD-zG-1gA"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="medium nature background.png" translatesAutoresizingMaskIntoConstraints="NO" id="jMt-AH-4t3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medium nature background.png" translatesAutoresizingMaskIntoConstraints="NO" id="jMt-AH-4t3">
                                 <rect key="frame" x="-7" y="142" width="406" height="618"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yir-cu-88q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yir-cu-88q">
                                 <rect key="frame" x="179" y="79" width="35" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -628,12 +628,25 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VML-41-avL">
+                                <rect key="frame" x="323" y="79" width="50" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.trianglehead.2.clockwise.rotate.90" catalog="system">
+                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="easyModeRestartButtonPressed:" destination="0bQ-US-Rlk" eventType="touchUpInside" id="0Zw-er-9WJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="44o-QO-3Uy"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
+                            <constraint firstItem="jMt-AH-4t3" firstAttribute="top" secondItem="VML-41-avL" secondAttribute="bottom" constant="28.670000000000002" id="1ff-Hc-GTf"/>
                             <constraint firstItem="Yir-cu-88q" firstAttribute="centerX" secondItem="Yop-bQ-Cau" secondAttribute="centerX" id="7m5-0x-1Rc"/>
+                            <constraint firstItem="VML-41-avL" firstAttribute="top" secondItem="44o-QO-3Uy" secondAttribute="top" constant="20" id="L8o-ae-7JU"/>
                             <constraint firstItem="44o-QO-3Uy" firstAttribute="bottom" secondItem="jMt-AH-4t3" secondAttribute="bottom" constant="58" id="S2o-An-oIR"/>
+                            <constraint firstItem="44o-QO-3Uy" firstAttribute="trailing" secondItem="VML-41-avL" secondAttribute="trailing" constant="20" id="UBz-9C-nXm"/>
                             <constraint firstItem="Yir-cu-88q" firstAttribute="top" secondItem="44o-QO-3Uy" secondAttribute="top" constant="20" id="Uff-Ti-DHK"/>
                             <constraint firstItem="jMt-AH-4t3" firstAttribute="top" secondItem="Yir-cu-88q" secondAttribute="bottom" constant="15" id="ZJb-nN-eU9"/>
                             <constraint firstItem="jMt-AH-4t3" firstAttribute="leading" secondItem="Yop-bQ-Cau" secondAttribute="leading" constant="-7" id="dOQ-Oz-lGJ"/>
@@ -642,6 +655,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="card1" destination="vvO-O5-a6c" id="3jR-0j-fGb"/>
+                        <outlet property="card10" destination="SQE-Fs-Hqg" id="82T-YP-Lch"/>
+                        <outlet property="card11" destination="41X-rE-rxS" id="uQk-lL-skJ"/>
+                        <outlet property="card12" destination="6Dz-fT-Po9" id="EX1-m1-URJ"/>
+                        <outlet property="card13" destination="3Ro-4X-VdP" id="7tW-84-G48"/>
+                        <outlet property="card14" destination="rUA-4j-hYK" id="vce-sG-f1I"/>
+                        <outlet property="card15" destination="u8s-rO-vda" id="lmo-uX-QXv"/>
+                        <outlet property="card16" destination="aeU-cg-eZf" id="Vbe-69-NEu"/>
+                        <outlet property="card2" destination="xxx-yy-7fp" id="CpK-F1-Eoe"/>
+                        <outlet property="card3" destination="FEp-BG-HId" id="glB-pg-zNu"/>
+                        <outlet property="card4" destination="sYQ-YF-2Ur" id="vOz-dF-lAu"/>
+                        <outlet property="card5" destination="b9x-rh-7gM" id="XLd-pA-exo"/>
+                        <outlet property="card6" destination="a1U-Qb-yaR" id="k1T-Ax-cla"/>
+                        <outlet property="card7" destination="4YW-iz-3zE" id="nca-Ot-0XA"/>
+                        <outlet property="card8" destination="wqZ-4V-eHl" id="DLu-uT-xl5"/>
+                        <outlet property="card9" destination="Wqn-zX-Stz" id="C7b-Ah-H9v"/>
                         <outlet property="clockDisplay" destination="Yir-cu-88q" id="HUL-dr-9vB"/>
                     </connections>
                 </viewController>

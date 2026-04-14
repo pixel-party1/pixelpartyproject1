@@ -19,14 +19,51 @@ class MemoryMatchMediumModeViewController: UIViewController {
     var timer: Timer?
     var timerCount = 0
     
+    @IBOutlet weak var card1: UIButton!
+    @IBOutlet weak var card2: UIButton!
+    @IBOutlet weak var card3: UIButton!
+    @IBOutlet weak var card4: UIButton!
+    @IBOutlet weak var card5: UIButton!
+    @IBOutlet weak var card6: UIButton!
+    @IBOutlet weak var card7: UIButton!
+    @IBOutlet weak var card8: UIButton!
+    @IBOutlet weak var card9: UIButton!
+    @IBOutlet weak var card10: UIButton!
+    @IBOutlet weak var card11: UIButton!
+    @IBOutlet weak var card12: UIButton!
+    @IBOutlet weak var card13: UIButton!
+    @IBOutlet weak var card14: UIButton!
+    @IBOutlet weak var card15: UIButton!
+    @IBOutlet weak var card16: UIButton!
+    
+    var cardValues = [
+    "chipmunk", "chipmunk",
+    "hive", "hive",
+    "log", "log",
+    "mushroom", "mushroom",
+    "pickaxe", "pickaxe",
+    "rabbit", "rabbit",
+    "rock", "rock",
+    "tree", "tree"
+    ]
+    
+    var buttons: [UIButton] = []
+    
+    var firstIndex: Int?
+    var secondIndex: Int?
+    
+    var firstButton: UIButton?
+    var secondButton: UIButton?
+    
+    var matchedPairs = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         clockDisplay.text = "00"
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
-
-        // Do any additional setup after loading the view.
+        
     }
     
     @objc func timerFired() {
