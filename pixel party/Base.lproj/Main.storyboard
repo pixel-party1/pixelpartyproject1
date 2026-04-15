@@ -1735,11 +1735,7 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
-        <image name="arrow.trianglehead.2.clockwise.rotate.90" catalog="system" width="128" height="117"/>
-=======
         <image name="arrow.trianglehead.clockwise" catalog="system" width="119" height="128"/>
->>>>>>> Maze-game
         <image name="arrow.uturn.backward" catalog="system" width="128" height="113"/>
         <image name="arrow.uturn.forward" catalog="system" width="128" height="113"/>
         <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
