@@ -11,6 +11,26 @@ class MazeGameMediumModeViewController: UIViewController {
     var mediumGameEnded = false
     var mediumMaze: [String] = []
     
+    var moveCount = 0
+    var lastPlayerRow = 0
+    var lastPlayerCol = 0
+    
+    
+    @IBOutlet weak var mazeGameMediumModeMoveCounter: UILabel!
+    
+    @IBAction func mazeGameMediumModeResetPressed(_ sender: Any) {
+        resetGame()
+    }
+    
+    
+    @IBAction func mazeGameMediumModeRandomPressed(_ sender: Any) {
+        if let randomMaze = mediumMazes.randomElement() {
+            mediumMaze = randomMaze
+        }
+        
+        resetGame()
+    }
+    
     @IBAction func mediumModeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -123,6 +143,17 @@ class MazeGameMediumModeViewController: UIViewController {
         playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
         
         mediumMazeBoardView.addSubview(playerView)
+        
+        // check if player moved
+        if playerRow != lastPlayerRow || playerCol != lastPlayerCol {
+            moveCount += 1
+            updateMoveCounter()
+        }
+
+        // update last position
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
     }
     
     // wall check
@@ -218,6 +249,12 @@ class MazeGameMediumModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        moveCount = 0
+        updateMoveCounter()
+
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
         if let randomMaze = mediumMazes.randomElement() {
                 mediumMaze = randomMaze
             }
@@ -236,6 +273,36 @@ class MazeGameMediumModeViewController: UIViewController {
         
         mazeGameMediumModeTimer.text = String(format: "%02d:%02d", minutes, seconds)
 
+    }
+    
+    func updateMoveCounter() {
+        mazeGameMediumModeMoveCounter.text = "Moves: \(moveCount)"
+    }
+    
+    func resetGame() {
+        // reset game state
+        mediumGameEnded = false
+        
+        // reset player position
+        findStartPosition()
+        
+        // reset move counter
+        moveCount = 0
+        updateMoveCounter()
+        
+        // reset last position tracking (important for your move detection)
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
+        // reset timer
+        timer?.invalidate()
+        timerCount = 0
+        mazeGameMediumModeTimer.text = "00:00"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+        // redraw maze
+        drawMediumMaze()
     }
     
 

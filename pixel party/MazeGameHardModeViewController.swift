@@ -17,6 +17,20 @@ class MazeGameHardModeViewController: UIViewController {
     
     @IBOutlet weak var mazeGameHardModeMoveCounter: UILabel!
     
+    
+    //@IBAction func mazeGameHardModeRandomPressed(_ sender: Any) {
+        //if let randomMaze = hardMazes.randomElement() {
+            //hardMaze = randomMaze
+        //}
+        
+        //resetGame()
+    //}
+    
+    
+    @IBAction func mazeGameHardModeResetPressed(_ sender: Any) {
+        resetGame()
+    }
+    
     @IBAction func hardModeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -233,6 +247,10 @@ class MazeGameHardModeViewController: UIViewController {
         lastPlayerRow = playerRow
         lastPlayerCol = playerCol
         
+        //if let randomMaze = easyMazes.randomElement() {
+                //easyMaze = randomMaze
+            //}
+        
         drawHardMaze()
         // Do any additional setup after loading the view.
         
@@ -251,6 +269,32 @@ class MazeGameHardModeViewController: UIViewController {
     
     func updateMoveCounter() {
         mazeGameHardModeMoveCounter.text = "Moves: \(moveCount)"
+    }
+    
+    func resetGame() {
+        // reset game state
+        hardGameEnded = false
+        
+        // reset player position
+        findStartPosition()
+        
+        // reset move counter
+        moveCount = 0
+        updateMoveCounter()
+        
+        // reset last position tracking (important for your move detection)
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
+        // reset timer
+        timer?.invalidate()
+        timerCount = 0
+        mazeGameHardModeTimer.text = "00:00"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+        // redraw maze
+        drawHardMaze()
     }
     
 

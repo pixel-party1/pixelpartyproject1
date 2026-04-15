@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -296,9 +295,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzw-pY-MHy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzw-pY-MHy">
                                 <rect key="frame" x="66" y="817" width="54" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="shuffle" catalog="system" renderingMode="hierarchical">
@@ -310,7 +308,7 @@
                                     </imageReference>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="mazeGameEasyModeRandomPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="oif-gk-MNV"/>
+                                    <action selector="mazeGameMediumModeRandomPressed:" destination="hqC-dt-fz2" eventType="touchUpInside" id="pTY-VU-9Kk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-EJ-fF2">
@@ -322,17 +320,38 @@
                                     <action selector="mazeGameEasyModeResetPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="TJe-XG-4Rn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KT-aP-tc7">
+                                <rect key="frame" x="283" y="816" width="49.666666666666686" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.trianglehead.clockwise" catalog="system" title="" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="mazeGameMediumModeResetPressed:" destination="hqC-dt-fz2" eventType="touchUpInside" id="9Bk-DD-nbH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRc-qn-9IF">
+                                <rect key="frame" x="163" y="48" width="67" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EAr-5Q-OWf"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="9vW-LC-5dL" firstAttribute="top" secondItem="a8T-Nn-4gn" secondAttribute="top" constant="48" id="1Uh-Ow-shI"/>
+                            <constraint firstItem="ZRc-qn-9IF" firstAttribute="centerX" secondItem="a8T-Nn-4gn" secondAttribute="centerX" id="7eN-6H-6iF"/>
+                            <constraint firstItem="ZRc-qn-9IF" firstAttribute="top" secondItem="a8T-Nn-4gn" secondAttribute="top" constant="48" id="7ky-77-G5z"/>
                             <constraint firstItem="kyF-Wv-ev7" firstAttribute="top" secondItem="a8T-Nn-4gn" secondAttribute="top" constant="51" id="B9P-i0-5xo"/>
+                            <constraint firstAttribute="trailing" secondItem="8KT-aP-tc7" secondAttribute="trailing" constant="60.329999999999998" id="BbU-nv-i8L"/>
+                            <constraint firstAttribute="bottom" secondItem="hzw-pY-MHy" secondAttribute="bottom" id="F8h-tt-afJ"/>
                             <constraint firstItem="kyF-Wv-ev7" firstAttribute="leading" secondItem="EAr-5Q-OWf" secondAttribute="leading" constant="16" id="NV8-VG-9IU"/>
                             <constraint firstItem="EAr-5Q-OWf" firstAttribute="trailing" secondItem="9vW-LC-5dL" secondAttribute="trailing" constant="16.670000000000002" id="fyq-Kd-ske"/>
+                            <constraint firstAttribute="bottom" secondItem="8KT-aP-tc7" secondAttribute="bottom" constant="1.6699999999999999" id="q1S-3p-OCB"/>
+                            <constraint firstItem="hzw-pY-MHy" firstAttribute="leading" secondItem="a8T-Nn-4gn" secondAttribute="leading" constant="66" id="rdQ-Ja-xLE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mazeGameMediumModeMoveCounter" destination="ZRc-qn-9IF" id="l5X-3Z-Nkd"/>
                         <outlet property="mazeGameMediumModeTimer" destination="9vW-LC-5dL" id="V1M-pr-8HH"/>
                         <outlet property="mediumMazeBoardView" destination="Cfa-6C-yL9" id="yoM-t0-oor"/>
                     </connections>
@@ -1202,7 +1221,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ti0-hb-EZY">
-                                <rect key="frame" x="16" y="104" width="361" height="738"/>
+                                <rect key="frame" x="16" y="104" width="361" height="714"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <gestureRecognizers/>
@@ -1225,18 +1244,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrE-Uu-KI6">
+                                <rect key="frame" x="50" y="817" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="shuffle" catalog="system" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color name="AccentColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="mazeGameHardModeRandomPressed:" destination="0Mm-cl-CvF" eventType="touchUpInside" id="LSx-aF-jyo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Js-SM-z9I">
+                                <rect key="frame" x="290" y="817" width="49.666666666666686" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.trianglehead.clockwise" catalog="system" title="" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="mazeGameHardModeResetPressed:" destination="0Mm-cl-CvF" eventType="touchUpInside" id="2oQ-Ae-B3F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cVX-nX-k0g"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="B1Y-fk-HlJ" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" constant="1" id="42N-cn-06w"/>
+                            <constraint firstAttribute="trailing" secondItem="3Js-SM-z9I" secondAttribute="trailing" constant="53.329999999999998" id="A8g-1E-0fY"/>
                             <constraint firstItem="yzm-KD-Bl8" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" id="FDe-mw-2sH"/>
                             <constraint firstItem="cVX-nX-k0g" firstAttribute="trailing" secondItem="yzm-KD-Bl8" secondAttribute="trailing" constant="16.670000000000002" id="LQc-Vu-xXU"/>
                             <constraint firstItem="B1Y-fk-HlJ" firstAttribute="centerX" secondItem="1Nf-O2-Phi" secondAttribute="centerX" id="WSS-9g-J6C"/>
                             <constraint firstItem="B1Y-fk-HlJ" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" constant="1" id="bmM-23-PwZ"/>
+                            <constraint firstAttribute="bottom" secondItem="3Js-SM-z9I" secondAttribute="bottom" constant="0.67000000000000004" id="dPp-kg-Jhy"/>
                             <constraint firstItem="B1Y-fk-HlJ" firstAttribute="centerX" secondItem="1Nf-O2-Phi" secondAttribute="centerX" id="gWU-TJ-a7C"/>
+                            <constraint firstAttribute="bottom" secondItem="vrE-Uu-KI6" secondAttribute="bottom" id="joS-6v-qrs"/>
                             <constraint firstItem="58d-EO-qFP" firstAttribute="top" secondItem="cVX-nX-k0g" secondAttribute="top" id="lZQ-IL-1Yz"/>
                             <constraint firstItem="58d-EO-qFP" firstAttribute="leading" secondItem="cVX-nX-k0g" secondAttribute="leading" constant="16" id="sE3-Dd-96p"/>
+                            <constraint firstItem="vrE-Uu-KI6" firstAttribute="leading" secondItem="1Nf-O2-Phi" secondAttribute="leading" constant="50" id="yA9-I8-XRB"/>
                         </constraints>
                     </view>
                     <connections>

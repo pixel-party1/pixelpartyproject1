@@ -250,6 +250,7 @@ class MazeGameEasyModeViewController: UIViewController {
         
         drawEasyMaze()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
