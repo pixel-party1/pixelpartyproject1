@@ -395,9 +395,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p7-LZ-wav">
-                                <rect key="frame" x="20" y="79" width="51" height="34.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p7-LZ-wav">
+                                <rect key="frame" x="20" y="79" width="51" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="arrowshape.left.fill" catalog="system">
                                     <color key="baseBackgroundColor" systemColor="labelColor"/>
@@ -486,9 +485,12 @@
                             <constraint firstItem="gDg-n2-EmE" firstAttribute="top" secondItem="7BZ-f5-HE0" secondAttribute="top" constant="20" id="Aw4-0l-7FO"/>
                             <constraint firstItem="dmk-vA-ZE0" firstAttribute="top" secondItem="7BZ-f5-HE0" secondAttribute="top" constant="20" id="EtC-1l-G0p"/>
                             <constraint firstItem="7BZ-f5-HE0" firstAttribute="trailing" secondItem="dmk-vA-ZE0" secondAttribute="trailing" constant="20" id="EzK-cr-Ezt"/>
+                            <constraint firstItem="9p7-LZ-wav" firstAttribute="top" secondItem="7BZ-f5-HE0" secondAttribute="top" constant="20" id="GEl-AA-J5c"/>
+                            <constraint firstItem="Llr-Dq-5H9" firstAttribute="top" secondItem="9p7-LZ-wav" secondAttribute="bottom" constant="28.670000000000002" id="H5U-mj-voK"/>
                             <constraint firstItem="Llr-Dq-5H9" firstAttribute="top" secondItem="dmk-vA-ZE0" secondAttribute="bottom" constant="28.670000000000002" id="QOt-FX-CZ9"/>
                             <constraint firstItem="gDg-n2-EmE" firstAttribute="centerX" secondItem="FtS-zb-og6" secondAttribute="centerX" id="jOM-6Q-z2C"/>
                             <constraint firstItem="Llr-Dq-5H9" firstAttribute="top" secondItem="gDg-n2-EmE" secondAttribute="bottom" constant="15" id="kbQ-8G-xax"/>
+                            <constraint firstItem="9p7-LZ-wav" firstAttribute="leading" secondItem="7BZ-f5-HE0" secondAttribute="leading" constant="20" id="wpP-sO-JSt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -513,7 +515,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOD-xC-nMb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOD-xC-nMb">
                                 <rect key="frame" x="20" y="79" width="51" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="arrowshape.left.fill" catalog="system">
@@ -536,97 +538,145 @@
                                 <rect key="frame" x="83" y="280" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="x9e-eP-6qe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9x-rh-7gM">
                                 <rect key="frame" x="83" y="368" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="L97-Bg-mI5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-Qb-yaR">
                                 <rect key="frame" x="144" y="368" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="zC1-SW-Jdv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YW-iz-3zE">
                                 <rect key="frame" x="209" y="368" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="2ox-kD-ooi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqZ-4V-eHl">
                                 <rect key="frame" x="272" y="368" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="0n5-Au-LQ1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQE-Fs-Hqg">
                                 <rect key="frame" x="144" y="454" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="PvR-iR-a3r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41X-rE-rxS">
                                 <rect key="frame" x="209" y="454" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="4r1-V5-SoC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dz-fT-Po9">
                                 <rect key="frame" x="272" y="454" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="tnF-9w-xCL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUA-4j-hYK">
                                 <rect key="frame" x="144" y="540" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="OZ4-hQ-LfT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8s-rO-vda">
                                 <rect key="frame" x="209" y="540" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="dXW-UN-erM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqn-zX-Stz">
                                 <rect key="frame" x="83" y="454" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="5WC-Sa-yII"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ro-4X-VdP">
                                 <rect key="frame" x="83" y="540" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="nPg-LV-Ro9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-yy-7fp">
                                 <rect key="frame" x="144" y="280" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="rzr-gI-KoM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-BG-HId">
                                 <rect key="frame" x="209" y="280" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="JcI-dy-Zcx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYQ-YF-2Ur">
                                 <rect key="frame" x="272" y="280" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="iZB-5N-TAb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeU-cg-eZf">
                                 <rect key="frame" x="272" y="540" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="X5H-NC-zPp" eventType="touchUpInside" id="RRS-Nt-WfB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VML-41-avL">
                                 <rect key="frame" x="323" y="79" width="50" height="34.333333333333343"/>
@@ -636,6 +686,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="easyModeRestartButtonPressed:" destination="0bQ-US-Rlk" eventType="touchUpInside" id="0Zw-er-9WJ"/>
+                                    <action selector="mediumModeButtonPressed:" destination="X5H-NC-zPp" eventType="touchUpInside" id="bH7-hp-7Id"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -644,14 +695,16 @@
                         <constraints>
                             <constraint firstItem="jMt-AH-4t3" firstAttribute="top" secondItem="VML-41-avL" secondAttribute="bottom" constant="28.670000000000002" id="1ff-Hc-GTf"/>
                             <constraint firstItem="Yir-cu-88q" firstAttribute="centerX" secondItem="Yop-bQ-Cau" secondAttribute="centerX" id="7m5-0x-1Rc"/>
+                            <constraint firstItem="VOD-xC-nMb" firstAttribute="leading" secondItem="44o-QO-3Uy" secondAttribute="leading" constant="20" id="IhY-xd-0pK"/>
                             <constraint firstItem="VML-41-avL" firstAttribute="top" secondItem="44o-QO-3Uy" secondAttribute="top" constant="20" id="L8o-ae-7JU"/>
                             <constraint firstItem="44o-QO-3Uy" firstAttribute="bottom" secondItem="jMt-AH-4t3" secondAttribute="bottom" constant="58" id="S2o-An-oIR"/>
                             <constraint firstItem="44o-QO-3Uy" firstAttribute="trailing" secondItem="VML-41-avL" secondAttribute="trailing" constant="20" id="UBz-9C-nXm"/>
                             <constraint firstItem="Yir-cu-88q" firstAttribute="top" secondItem="44o-QO-3Uy" secondAttribute="top" constant="20" id="Uff-Ti-DHK"/>
                             <constraint firstItem="jMt-AH-4t3" firstAttribute="top" secondItem="Yir-cu-88q" secondAttribute="bottom" constant="15" id="ZJb-nN-eU9"/>
                             <constraint firstItem="jMt-AH-4t3" firstAttribute="leading" secondItem="Yop-bQ-Cau" secondAttribute="leading" constant="-7" id="dOQ-Oz-lGJ"/>
-                            <constraint firstItem="jMt-AH-4t3" firstAttribute="top" secondItem="VOD-xC-nMb" secondAttribute="bottom" constant="28.670000000000002" id="pwj-Gq-3lh"/>
+                            <constraint firstItem="VOD-xC-nMb" firstAttribute="top" secondItem="44o-QO-3Uy" secondAttribute="top" constant="20" id="kyH-JU-g5j"/>
                             <constraint firstAttribute="trailing" secondItem="jMt-AH-4t3" secondAttribute="trailing" constant="-6" id="t0S-Ry-Tur"/>
+                            <constraint firstItem="jMt-AH-4t3" firstAttribute="top" secondItem="VOD-xC-nMb" secondAttribute="bottom" constant="28.670000000000002" id="xXf-3x-8r6"/>
                         </constraints>
                     </view>
                     <connections>
@@ -709,217 +762,337 @@
                                 <rect key="frame" x="26" y="216" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Z7W-A0-zUo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iT-7Q-xOP">
                                 <rect key="frame" x="26" y="294" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Hgu-HP-2dN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm3-RC-Hn7">
                                 <rect key="frame" x="87" y="294" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="PQb-Fn-8HT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEf-hf-FBR">
                                 <rect key="frame" x="147" y="294" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="VnB-Xo-uzP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Pf-tC4">
                                 <rect key="frame" x="206" y="294" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="d08-SN-9QZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-D7-jMP">
                                 <rect key="frame" x="266" y="294" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="9ib-qB-U6E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMD-pM-kXM">
                                 <rect key="frame" x="325" y="294" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="EFF-n4-GMu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFM-hU-z4y">
                                 <rect key="frame" x="87" y="372" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="IML-Pc-nFd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEz-ky-VNg">
                                 <rect key="frame" x="147" y="372" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Mwx-5u-ymF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-z7-vfl">
                                 <rect key="frame" x="206" y="372" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="UxL-CI-g1n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niE-0k-baY">
                                 <rect key="frame" x="266" y="372" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="s7V-bD-h7r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x41-Cb-601">
                                 <rect key="frame" x="325" y="372" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="nHO-R9-yH7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3M-qH-jbT">
                                 <rect key="frame" x="87" y="450" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="J61-uP-shp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJv-tB-DmC">
                                 <rect key="frame" x="147" y="450" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="24g-p5-vdA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rna-zU-Ub9">
                                 <rect key="frame" x="206" y="450" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="TyF-Oi-Heo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQg-de-2qe">
                                 <rect key="frame" x="266" y="450" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="knX-HG-f99"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-oR-BJD">
                                 <rect key="frame" x="325" y="450" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="BjD-DE-Bth"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgr-3Q-5mj">
                                 <rect key="frame" x="87" y="528" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="BNe-5x-02s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATL-Cn-yjU">
                                 <rect key="frame" x="147" y="528" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="dLQ-NX-7qC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snS-qC-aDS">
                                 <rect key="frame" x="206" y="528" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="KOd-ir-wUH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pI-UA-U8M">
                                 <rect key="frame" x="266" y="528" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Zip-Tj-UFe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoM-t7-dwl">
                                 <rect key="frame" x="325" y="528" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Xox-90-BeT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zp-7f-VaD">
                                 <rect key="frame" x="87" y="606" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="BSW-82-dhz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a52-7b-WQT">
                                 <rect key="frame" x="147" y="606" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="ade-br-wmA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMb-wp-mfu">
                                 <rect key="frame" x="206" y="606" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="oNM-IU-an9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLa-gN-UiW">
                                 <rect key="frame" x="266" y="606" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="iFd-wp-UQI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJ4-RM-v2b">
                                 <rect key="frame" x="87" y="216" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="4qN-8p-abm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNd-YC-FbL">
                                 <rect key="frame" x="147" y="216" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Onu-k1-GSL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6E-LR-F0a">
                                 <rect key="frame" x="206" y="216" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="I5X-N8-3xK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRD-p0-ZPQ">
                                 <rect key="frame" x="266" y="216" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="CWP-K0-bj5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQH-GV-Q0v">
                                 <rect key="frame" x="325" y="216" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="IQc-tK-Rki"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7i-Bd-FwY">
                                 <rect key="frame" x="26" y="372" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="kMa-sR-1gK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBw-Gj-SuW">
                                 <rect key="frame" x="26" y="450" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="Xhf-UR-RW6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K6-ps-4Ce">
                                 <rect key="frame" x="26" y="528" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="MAa-Sx-OFQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVo-xS-kHh">
                                 <rect key="frame" x="26" y="606" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="QfO-zz-uOC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGz-MC-6Hn">
                                 <rect key="frame" x="325" y="606" width="45" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="fixed"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed"/>
+                                <connections>
+                                    <action selector="cardTapped:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="9k3-xb-Qnq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUV-Hb-gVV">
+                                <rect key="frame" x="323" y="79" width="50" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrow.trianglehead.2.clockwise.rotate.90" catalog="system">
+                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="easyModeRestartButtonPressed:" destination="0bQ-US-Rlk" eventType="touchUpInside" id="20A-Gr-Cur"/>
+                                    <action selector="hardModeResetButtonPressed:" destination="Kv2-uC-Hah" eventType="touchUpInside" id="rlZ-eP-jtY"/>
+                                    <action selector="mediumModeButtonPressed:" destination="X5H-NC-zPp" eventType="touchUpInside" id="SLX-QM-nGu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="etA-b4-BV3"/>
@@ -929,14 +1102,53 @@
                             <constraint firstItem="rza-IJ-nvK" firstAttribute="leading" secondItem="etA-b4-BV3" secondAttribute="leading" constant="-7" id="1Xz-V8-Prs"/>
                             <constraint firstItem="etA-b4-BV3" firstAttribute="bottom" secondItem="rza-IJ-nvK" secondAttribute="bottom" constant="58" id="6BZ-yg-3kW"/>
                             <constraint firstItem="wOC-EX-rRF" firstAttribute="leading" secondItem="etA-b4-BV3" secondAttribute="leading" constant="20" id="NMm-ON-Eqk"/>
+                            <constraint firstItem="etA-b4-BV3" firstAttribute="trailing" secondItem="QUV-Hb-gVV" secondAttribute="trailing" constant="20" id="TQA-2w-fqu"/>
                             <constraint firstItem="fZm-n2-EPf" firstAttribute="centerX" secondItem="eTW-py-lnu" secondAttribute="centerX" id="YJm-UH-XaD"/>
+                            <constraint firstItem="QUV-Hb-gVV" firstAttribute="top" secondItem="etA-b4-BV3" secondAttribute="top" constant="20" id="Yaf-dT-4Dp"/>
                             <constraint firstAttribute="trailing" secondItem="rza-IJ-nvK" secondAttribute="trailing" constant="-6" id="agl-MG-7Un"/>
                             <constraint firstItem="rza-IJ-nvK" firstAttribute="top" secondItem="fZm-n2-EPf" secondAttribute="bottom" constant="15" id="hUU-tI-HNR"/>
+                            <constraint firstItem="rza-IJ-nvK" firstAttribute="top" secondItem="QUV-Hb-gVV" secondAttribute="bottom" constant="28.670000000000002" id="ozS-dh-dZY"/>
                             <constraint firstItem="fZm-n2-EPf" firstAttribute="top" secondItem="etA-b4-BV3" secondAttribute="top" constant="20" id="q7G-F7-MM0"/>
                             <constraint firstItem="rza-IJ-nvK" firstAttribute="top" secondItem="wOC-EX-rRF" secondAttribute="bottom" constant="28.670000000000002" id="yGR-mq-ZfL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="card1" destination="Qgn-lm-0KX" id="ag8-x3-Xng"/>
+                        <outlet property="card10" destination="HUC-Pf-tC4" id="ejQ-Nw-b7m"/>
+                        <outlet property="card11" destination="p6d-D7-jMP" id="w3N-qf-u1B"/>
+                        <outlet property="card12" destination="uMD-pM-kXM" id="P4b-gL-fmH"/>
+                        <outlet property="card13" destination="Y7i-Bd-FwY" id="QFt-J0-5Sm"/>
+                        <outlet property="card14" destination="tFM-hU-z4y" id="9HE-5v-NFY"/>
+                        <outlet property="card15" destination="cEz-ky-VNg" id="dh2-Wa-LeA"/>
+                        <outlet property="card16" destination="Pdn-z7-vfl" id="3Cf-qs-o5A"/>
+                        <outlet property="card17" destination="niE-0k-baY" id="jIA-fg-FZg"/>
+                        <outlet property="card18" destination="x41-Cb-601" id="7UO-nC-n73"/>
+                        <outlet property="card19" destination="bBw-Gj-SuW" id="SGO-zd-SKZ"/>
+                        <outlet property="card2" destination="mJ4-RM-v2b" id="XpQ-VL-ogT"/>
+                        <outlet property="card20" destination="k3M-qH-jbT" id="Wer-DD-brD"/>
+                        <outlet property="card21" destination="QJv-tB-DmC" id="Zxp-d0-NDW"/>
+                        <outlet property="card22" destination="Rna-zU-Ub9" id="SoD-Lw-JG8"/>
+                        <outlet property="card23" destination="sQg-de-2qe" id="K9m-PK-u98"/>
+                        <outlet property="card24" destination="qkV-oR-BJD" id="wSW-fC-oI1"/>
+                        <outlet property="card25" destination="0K6-ps-4Ce" id="LEe-fs-aa6"/>
+                        <outlet property="card26" destination="bgr-3Q-5mj" id="XJH-7R-7YW"/>
+                        <outlet property="card27" destination="ATL-Cn-yjU" id="Ugp-kA-qfr"/>
+                        <outlet property="card28" destination="snS-qC-aDS" id="ZPK-IN-Loa"/>
+                        <outlet property="card29" destination="4pI-UA-U8M" id="ydt-oI-0Za"/>
+                        <outlet property="card3" destination="XNd-YC-FbL" id="npn-o8-dQJ"/>
+                        <outlet property="card30" destination="LoM-t7-dwl" id="qS6-oO-GAf"/>
+                        <outlet property="card31" destination="lVo-xS-kHh" id="6GJ-vE-xGZ"/>
+                        <outlet property="card32" destination="5zp-7f-VaD" id="40q-of-3sL"/>
+                        <outlet property="card33" destination="a52-7b-WQT" id="OI4-nq-UGm"/>
+                        <outlet property="card34" destination="IMb-wp-mfu" id="07p-K2-wbi"/>
+                        <outlet property="card35" destination="PLa-gN-UiW" id="FGl-bi-61X"/>
+                        <outlet property="card36" destination="DGz-MC-6Hn" id="EJq-7s-Aby"/>
+                        <outlet property="card4" destination="g6E-LR-F0a" id="UX3-Kh-mAp"/>
+                        <outlet property="card5" destination="ZRD-p0-ZPQ" id="zgT-AJ-UUn"/>
+                        <outlet property="card6" destination="bQH-GV-Q0v" id="QH1-F2-Avf"/>
+                        <outlet property="card7" destination="3iT-7Q-xOP" id="ZKi-y7-Igl"/>
+                        <outlet property="card8" destination="Rm3-RC-Hn7" id="eFA-Ny-MKW"/>
+                        <outlet property="card9" destination="oEf-hf-FBR" id="Mcd-oj-Tbh"/>
                         <outlet property="clockDisplay" destination="fZm-n2-EPf" id="ZMs-so-AnV"/>
                     </connections>
                 </viewController>

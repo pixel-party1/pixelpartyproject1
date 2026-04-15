@@ -9,18 +9,18 @@ import UIKit
 
 class MemoryMatchEasyModeViewController: UIViewController {
     
-    
+    // go back to previous screen
     @IBAction func memoryMatchEasyModeBackButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-
+    // basic timer setup got this from my comp228 module
     @IBOutlet weak var clockDisplay: UILabel!
     
     var timer: Timer?
     var timerCount = 0
     
-    
+    // all card buttons (easy mode = 6 cards)
     @IBOutlet weak var card1: UIButton!
     @IBOutlet weak var card2: UIButton!
     @IBOutlet weak var card3: UIButton!
@@ -28,21 +28,26 @@ class MemoryMatchEasyModeViewController: UIViewController {
     @IBOutlet weak var card5: UIButton!
     @IBOutlet weak var card6: UIButton!
     
+    // pairs of values (2 of each = match system)
     var cardValues = ["burger", "burger", "sushi", "sushi", "pizza", "pizza"]
     
+    // makes it easier to loop through cards instead of handling each one manually
     var buttons: [UIButton] = []
     
+    // track which cards are currently selected
     var firstIndex: Int?
     var secondIndex: Int?
     
     var firstButton: UIButton?
     var secondButton: UIButton?
     
+    // used to check if player has won
     var matchedPairs = 0
     
     
     @IBAction func easyModeRestartButtonPressed(_ sender: Any) {
         
+        // reset timer back to 0 and start again
         restartTimer()
         
         // reset game state
@@ -55,7 +60,7 @@ class MemoryMatchEasyModeViewController: UIViewController {
             // reshuffle cards
             cardValues.shuffle()
             
-            // reset all buttons
+            // flip all cards back over + reenable them
             for button in buttons {
                 button.isEnabled = true
                 button.setImage(UIImage(named: "back_of_card"), for: .normal)
@@ -67,12 +72,16 @@ class MemoryMatchEasyModeViewController: UIViewController {
         
         clockDisplay.text = "00"
         
+        // start timer when screen loads
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
         
+        // shuffle cards at start
         cardValues.shuffle()
         
+        // stored buttons in array for easier handling
         buttons = [card1, card2, card3, card4, card5, card6]
         
+        // set all cards face down
         for button in buttons {
             button.setImage(UIImage(named: "back_of_card"), for: .normal)
         }
@@ -84,7 +93,10 @@ class MemoryMatchEasyModeViewController: UIViewController {
         let seconds = timerCount % 60
         let minutes = timerCount / 60
         
+        //format in minutes and seconds not just seconds
         clockDisplay.text = String(format: "%02d:%02d", minutes,seconds)
+        
+        // custom font for game feel
         clockDisplay.font = UIFont(name: "Kenney-Rocket", size: 30)
     }
     
@@ -94,6 +106,7 @@ class MemoryMatchEasyModeViewController: UIViewController {
                 
                 let value = cardValues[index]
                 
+                // added flip animation when revealing card to look nicer
                 UIView.transition(with: sender,
                               duration: 0.4,
                               options: .transitionFlipFromLeft,
@@ -103,11 +116,12 @@ class MemoryMatchEasyModeViewController: UIViewController {
                 
                 }, completion: nil)
                 
-                // First card
+                // first card selected
                 if firstIndex == nil {
                     firstIndex = index
                     firstButton = sender
                     
+                // second card selected so now we can check for a match
                 } else if secondIndex == nil {
                     secondIndex = index
                     secondButton = sender
@@ -124,25 +138,29 @@ class MemoryMatchEasyModeViewController: UIViewController {
            let button1 = firstButton,
            let button2 = secondButton {
             
-            // If match
+            // if the two selected cards match
             if cardValues[first] == cardValues[second] {
                 
+                // just for debugging
                 print("Match!")
                 
+                // disable so they can't be tapped again
                 button1.isEnabled = false
                 button2.isEnabled = false
                 
                 matchedPairs += 1
                 
-                // check win
+                // win condition (3 pairs in easy mode)
                 if matchedPairs == 3 {
                     showWinScreen()
                 }
                 
             } else {
                 
+                // just for debugging
                 print("No match")
                 
+                // flip both cards after short delay
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     
                     UIView.transition(with: button1,
@@ -166,7 +184,7 @@ class MemoryMatchEasyModeViewController: UIViewController {
                 }
             }
             
-            // reset selections
+            // reset selection so next turn works properly
             firstIndex = nil
             secondIndex = nil
             firstButton = nil
@@ -176,15 +194,17 @@ class MemoryMatchEasyModeViewController: UIViewController {
     
     func showWinScreen() {
         
-        // STOP TIMER FIRST
-            timer?.invalidate()
-            timer = nil
+        //stop timer so final time is frozen
+        timer?.invalidate()
+        timer = nil
             
         let alert = UIAlertController(title: "You Win! 🎉",
                                       message: "You matched all the pairs!",
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { _ in
+            
+            // restart everything cleanly
             self.restartTimer()
             self.resetGame()
         }))
@@ -197,6 +217,7 @@ class MemoryMatchEasyModeViewController: UIViewController {
         matchedPairs = 0
         cardValues.shuffle()
         
+        //reset all cards to intial state
         for button in buttons {
             button.isEnabled = true
             button.setImage(UIImage(named: "back_of_card"), for: .normal)
@@ -205,12 +226,14 @@ class MemoryMatchEasyModeViewController: UIViewController {
     
     func restartTimer() {
         
+        // make sure old timer is gone before starting new one
         timer?.invalidate()
         timer = nil
         
         timerCount = 0
         clockDisplay.text = "00:00"
         
+        //start fresh timer
         timer = Timer.scheduledTimer(timeInterval: 1.0,
                                      target: self,
                                      selector: #selector(timerFired),
