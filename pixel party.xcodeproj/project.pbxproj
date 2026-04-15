@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		959C25E22F8FDC5B00C8E61D /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C25E02F8FDC5B00C8E61D /* User+CoreDataClass.swift */; };
+		959C25E32F8FDC5B00C8E61D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C25E12F8FDC5B00C8E61D /* User+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8FB3FA8D2F574A4C00DD421C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		8FB3FA732F574A4A00DD421C /* pixel party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pixel party.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB3FA8C2F574A4C00DD421C /* pixel partyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pixel partyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB3FA962F574A4C00DD421C /* pixel partyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pixel partyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		959C25E02F8FDC5B00C8E61D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		959C25E12F8FDC5B00C8E61D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -93,6 +100,8 @@
 		8FB3FA6A2F574A4A00DD421C = {
 			isa = PBXGroup;
 			children = (
+				959C25E02F8FDC5B00C8E61D /* User+CoreDataClass.swift */,
+				959C25E12F8FDC5B00C8E61D /* User+CoreDataProperties.swift */,
 				8FB3FA752F574A4A00DD421C /* pixel party */,
 				8FB3FA8F2F574A4C00DD421C /* pixel partyTests */,
 				8FB3FA992F574A4C00DD421C /* pixel partyUITests */,
@@ -256,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959C25E22F8FDC5B00C8E61D /* User+CoreDataClass.swift in Sources */,
+				959C25E32F8FDC5B00C8E61D /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
