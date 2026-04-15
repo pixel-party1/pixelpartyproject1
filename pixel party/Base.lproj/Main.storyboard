@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -188,6 +189,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdp-Di-2dL">
+                                <rect key="frame" x="280.33333333333331" y="817.66666666666663" width="49.666666666666686" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.trianglehead.clockwise" catalog="system" title="" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="mazeGameEasyModeResetPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="jYG-MM-6pX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-Cm-ewr">
+                                <rect key="frame" x="66" y="817" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="shuffle" catalog="system" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color name="AccentColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="mazeGameEasyModeRandomPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="YuV-ow-rpO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -195,7 +220,11 @@
                             <constraint firstItem="vDP-nQ-MDp" firstAttribute="leading" secondItem="9Qr-K3-g4I" secondAttribute="leading" constant="16" id="7cl-cy-MOb"/>
                             <constraint firstItem="OZL-eJ-zhx" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="8jr-jx-GLD"/>
                             <constraint firstItem="O1F-7s-AyL" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="KlY-9A-6z9"/>
+                            <constraint firstAttribute="bottom" secondItem="Wha-Cm-ewr" secondAttribute="bottom" id="MGD-tH-uLm"/>
                             <constraint firstItem="9Qr-K3-g4I" firstAttribute="trailing" secondItem="OZL-eJ-zhx" secondAttribute="trailing" constant="22.670000000000002" id="PyH-kr-UNQ"/>
+                            <constraint firstItem="Wha-Cm-ewr" firstAttribute="leading" secondItem="L7q-Bk-zh8" secondAttribute="leading" constant="66" id="Te5-qd-Ie9"/>
+                            <constraint firstAttribute="bottom" secondItem="Fdp-Di-2dL" secondAttribute="bottom" id="UoM-f6-qDD"/>
+                            <constraint firstAttribute="trailing" secondItem="Fdp-Di-2dL" secondAttribute="trailing" constant="63" id="XaP-It-l6W"/>
                             <constraint firstItem="vDP-nQ-MDp" firstAttribute="top" secondItem="9Qr-K3-g4I" secondAttribute="top" id="hqn-cW-32N"/>
                             <constraint firstItem="O1F-7s-AyL" firstAttribute="centerX" secondItem="L7q-Bk-zh8" secondAttribute="centerX" id="x7P-VF-fpf"/>
                         </constraints>
@@ -267,6 +296,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzw-pY-MHy">
+                                <rect key="frame" x="66" y="817" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="shuffle" catalog="system" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color name="AccentColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="mazeGameEasyModeRandomPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="oif-gk-MNV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-EJ-fF2">
+                                <rect key="frame" x="283" y="817" width="49.666666666666515" height="34.333333333333485"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.trianglehead.clockwise" catalog="system" title="" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="mazeGameEasyModeResetPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="TJe-XG-4Rn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EAr-5Q-OWf"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -1680,7 +1735,11 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="arrow.trianglehead.2.clockwise.rotate.90" catalog="system" width="128" height="117"/>
+=======
+        <image name="arrow.trianglehead.clockwise" catalog="system" width="119" height="128"/>
+>>>>>>> Maze-game
         <image name="arrow.uturn.backward" catalog="system" width="128" height="113"/>
         <image name="arrow.uturn.forward" catalog="system" width="128" height="113"/>
         <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>

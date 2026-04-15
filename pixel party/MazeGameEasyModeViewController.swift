@@ -19,6 +19,19 @@ class MazeGameEasyModeViewController: UIViewController {
     
     @IBOutlet weak var mazeGameEasyModeMoveCounter: UILabel!
     
+    
+    @IBAction func mazeGameEasyModeRandomPressed(_ sender: Any) {
+        if let randomMaze = easyMazes.randomElement() {
+            easyMaze = randomMaze
+        }
+        
+        resetGame()
+    }
+    
+    @IBAction func mazeGameEasyModeResetPressed(_ sender: Any) {
+        resetGame()
+    }
+    
     // adding the buttons or links needed
     @IBAction func easyModeButtonTapped(_ sender: Any) {dismiss(animated: true, completion: nil)
     }
@@ -272,6 +285,32 @@ class MazeGameEasyModeViewController: UIViewController {
     
     func updateMoveCounter() {
         mazeGameEasyModeMoveCounter.text = "Moves: \(moveCount)"
+    }
+    
+    func resetGame() {
+        // reset game state
+        easyGameEnded = false
+        
+        // reset player position
+        findStartPosition()
+        
+        // reset move counter
+        moveCount = 0
+        updateMoveCounter()
+        
+        // reset last position tracking (important for your move detection)
+        lastPlayerRow = playerRow
+        lastPlayerCol = playerCol
+        
+        // reset timer
+        timer?.invalidate()
+        timerCount = 0
+        mazeGameEasyModeTimer.text = "00:00"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+        // redraw maze
+        drawEasyMaze()
     }
 
     /*
