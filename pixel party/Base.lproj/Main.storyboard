@@ -154,10 +154,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-vU-OF0">
-                                <rect key="frame" x="16" y="355" width="361" height="188"/>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Easy Mode background.png" translatesAutoresizingMaskIntoConstraints="NO" id="zda-7q-HET">
+                                <rect key="frame" x="0.0" y="0.0" width="410" height="878"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-vU-OF0">
+                                <rect key="frame" x="0.0" y="122" width="393" height="671"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="a6k-Lm-tea" appends="YES" id="PVa-UR-09q"/>
@@ -166,10 +169,10 @@
                                     <outletCollection property="gestureRecognizers" destination="FrR-yO-Gqe" appends="YES" id="vnS-pE-EK8"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
-                                <rect key="frame" x="15.999999999999996" y="59" width="54.666666666666657" height="34.333333333333343"/>
-                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDP-nQ-MDp">
+                                <rect key="frame" x="16" y="59" width="36" height="34"/>
+                                <color key="backgroundColor" red="0.3698730469" green="0.7509765625" blue="0.8022460938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
                                 <connections>
@@ -188,22 +191,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdp-Di-2dL">
-                                <rect key="frame" x="280.33333333333331" y="817.66666666666663" width="49.666666666666686" height="34.333333333333371"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdp-Di-2dL">
+                                <rect key="frame" x="288" y="809" width="44" height="37"/>
+                                <color key="backgroundColor" red="0.7177734375" green="0.5981445312" blue="0.4001464844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.trianglehead.clockwise" catalog="system" title="" imagePadding="0.0"/>
                                 <connections>
                                     <action selector="mazeGameEasyModeResetPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="jYG-MM-6pX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-Cm-ewr">
-                                <rect key="frame" x="66" y="817" width="54" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-Cm-ewr">
+                                <rect key="frame" x="62" y="809" width="43" height="36"/>
+                                <color key="backgroundColor" red="0.7177734375" green="0.5981445312" blue="0.4001464844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="shuffle" catalog="system" renderingMode="hierarchical">
                                         <hierarchicalColors>
-                                            <color name="AccentColor"/>
-                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="systemGray6Color"/>
+                                            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color systemColor="tertiaryLabelColor"/>
                                         </hierarchicalColors>
                                     </imageReference>
@@ -212,10 +219,6 @@
                                     <action selector="mazeGameEasyModeRandomPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="YuV-ow-rpO"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="easy food background.png" translatesAutoresizingMaskIntoConstraints="NO" id="zda-7q-HET">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="862"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -1322,11 +1325,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Easy Mode background.png" width="810" height="1440"/>
         <image name="arrow.trianglehead.clockwise" catalog="system" width="119" height="128"/>
         <image name="arrow.uturn.backward" catalog="system" width="128" height="113"/>
         <image name="arrow.uturn.forward" catalog="system" width="128" height="113"/>
         <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
-        <image name="easy food background.png" width="307.5" height="463.5"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="night background.jpg" width="129.60000610351562" height="86.400001525878906"/>
         <image name="shuffle" catalog="system" width="128" height="95"/>
@@ -1347,6 +1350,12 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
