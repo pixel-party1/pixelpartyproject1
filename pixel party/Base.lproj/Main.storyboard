@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-vU-OF0">
-                                <rect key="frame" x="16" y="92" width="361" height="726"/>
+                                <rect key="frame" x="16" y="255" width="361" height="309"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <gestureRecognizers/>
@@ -212,6 +212,10 @@
                                     <action selector="mazeGameEasyModeRandomPressed:" destination="bHV-B5-rxe" eventType="touchUpInside" id="YuV-ow-rpO"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Easy Mode background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-Eb-X0O">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qr-K3-g4I"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -257,7 +261,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1943" y="2478"/>
+            <point key="canvasLocation" x="-1944.2748091603053" y="2477.4647887323945"/>
         </scene>
         <!--Maze Game Medium Mode View Controller-->
         <scene sceneID="tbL-EZ-dKY">
@@ -2215,6 +2219,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Easy Mode background.png" width="810" height="1440"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrow.trianglehead.2.clockwise.rotate.90" catalog="system" width="128" height="117"/>
         <image name="arrow.trianglehead.clockwise" catalog="system" width="119" height="128"/>
