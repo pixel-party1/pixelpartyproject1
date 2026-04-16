@@ -32,14 +32,17 @@ class RegisterViewController: UIViewController {
         let password = passwordField.text ?? ""
         let confirmPassword = confirmPasswordField.text ?? ""
         
-        if (password.isEqual(confirmPassword)) {
-            let hashed = hash(password)
+        let validUN = usernameValid(username)
+        let validPW = passwordValid(password)
+        
+        if password.isEqual(confirmPassword) {
             for user in users {
-                if (username.isEqual(user.username)) {
+                if username.isEqual(user.username) {
                     userExists = true
                 }
             }
-            if (userExists == false) {
+            if userExists == false && validPW && validUN {
+                let hashed = hash(password)
                 storeUser(theUsername: username, theHashedPassword: hashed)
                 UserDefaults.standard.set(true, forKey: "signedIn")
                 UserDefaults.standard.set(username, forKey: "currentUser")
@@ -48,14 +51,25 @@ class RegisterViewController: UIViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
                 alert.addAction(okAction)
-                present(alert, animated: true)                
-            } else if (userExists == true) {
+                present(alert, animated: true)
+            } else if userExists == true {
                 let alert = UIAlertController(title: "Username already exists", message: "An account with this username already exists", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default)
                 alert.addAction(okAction)
                 present(alert, animated: true)
+            
+            } else if !validUN {
+                let alert = UIAlertController(title: "Invalid Username", message: "Username must be 4-16 characters long", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(okAction)
+                present(alert, animated: true)
+            } else if !validPW {
+                let alert = UIAlertController(title: "Invalid Password", message: "Password must be 8-20 characters long and include letters and numbers", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(okAction)
+                present(alert, animated: true)
             }
-        } else {
+        } else if password.isEqual(confirmPassword) == false {
             let alert = UIAlertController(title: "Passwords do not match", message: "Confirm password must match password", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default)
             alert.addAction(okAction)
@@ -103,9 +117,45 @@ class RegisterViewController: UIViewController {
         return hashString
     }
     
+    func usernameValid (_ input: String) -> Bool {
+        let length = input.count
+        if length < 4 {
+            return false
+        } else if length > 16 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func passwordValid (_ input: String) -> Bool {
+        let length = input.count
+        if length < 8 {
+            return false
+        } else if length > 20 {
+            return false
+        } else {
+            var letter = false
+            var number = false
+            
+            for c in input {
+                if c.isLetter {
+                    letter = true
+                }
+                if c.isNumber {
+                    number = true
+                }
+            }
+            return letter && number
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userExists = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         fetchUsers()
     }
 }
