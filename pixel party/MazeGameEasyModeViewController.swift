@@ -104,7 +104,7 @@ class MazeGameEasyModeViewController: UIViewController {
         
         // makes the frame more square
         // CGFloat - used in iOS for sizes, positions and layout measurements. It measures items on screen so in this case it would measure the maze board
-        let tileSize = min(easyMazeBoardView.bounds.width / CGFloat(cols), easyMazeBoardView.bounds.height / CGFloat(rows))
+        let tileSize = min(easyMazeBoardView.bounds.width / CGFloat(cols), easyMazeBoardView.bounds.height / CGFloat(rows)) * 1.2
         
         let totalWidth = tileSize * CGFloat(cols)
         let totalHeight = tileSize * CGFloat(rows)
@@ -138,14 +138,19 @@ class MazeGameEasyModeViewController: UIViewController {
             }
         }
         
-        let playerX = xOffset + CGFloat(playerCol) * tileSize + 5
-        let playerY = yOffset + CGFloat(playerRow) * tileSize + 5
+        let playerX = xOffset + CGFloat(playerCol) * tileSize
+        let playerY = yOffset + CGFloat(playerRow) * tileSize
         
-        let playerView = UIView(frame: CGRect(x: playerX, y: playerY, width: tileSize - 10, height: tileSize - 10))
-        playerView.backgroundColor = UIColor.systemBlue
-        playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
+        let playerImageView = UIImageView(frame: CGRect(
+            x: playerX,
+            y: playerY,
+            width: tileSize,
+            height: tileSize
+        ))
+
+        playerImageView.image = UIImage(named: "Triceratops - easy mode")
         
-        easyMazeBoardView.addSubview(playerView)
+        easyMazeBoardView.addSubview(playerImageView)
         
         // check if player moved
         if playerRow != lastPlayerRow || playerCol != lastPlayerCol {
