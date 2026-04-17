@@ -89,7 +89,7 @@ class MazeGameHardModeViewController: UIViewController {
         let cols = hardMaze[0].count
         
         // makes the frame more square
-        let tileSize = min(hardMazeBoardView.bounds.width / CGFloat(cols), hardMazeBoardView.bounds.height / CGFloat(rows))
+        let tileSize = min(hardMazeBoardView.bounds.width / CGFloat(cols), hardMazeBoardView.bounds.height / CGFloat(rows)) * 1
         
         let totalWidth = tileSize * CGFloat(cols)
         let totalHeight = tileSize * CGFloat(rows)
@@ -132,14 +132,19 @@ class MazeGameHardModeViewController: UIViewController {
             }
         }
         
-        let playerX = xOffset + CGFloat(playerCol) * tileSize + 5
-        let playerY = yOffset + CGFloat(playerRow) * tileSize + 5
+        let playerX = xOffset + CGFloat(playerCol) * tileSize
+        let playerY = yOffset + CGFloat(playerRow) * tileSize
         
-        let playerView = UIView(frame: CGRect(x: playerX, y: playerY, width: tileSize - 10, height: tileSize - 10))
-        playerView.backgroundColor = .systemBlue
-        playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
+        let playerImageView = UIImageView(frame: CGRect(
+            x: playerX,
+            y: playerY,
+            width: tileSize + 5,
+            height: tileSize + 5
+        ))
+
+        playerImageView.image = UIImage(named: "t-rex - hard mode")
         
-        hardMazeBoardView.addSubview(playerView)
+        hardMazeBoardView.addSubview(playerImageView)
     }
     
     // wall check

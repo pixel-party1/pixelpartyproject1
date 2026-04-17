@@ -102,7 +102,7 @@ class MazeGameMediumModeViewController: UIViewController {
         let cols = mediumMaze[0].count
         
         // makes the frame more square
-        let tileSize = min(mediumMazeBoardView.bounds.width / CGFloat(cols), mediumMazeBoardView.bounds.height / CGFloat(rows))
+        let tileSize = min(mediumMazeBoardView.bounds.width / CGFloat(cols), mediumMazeBoardView.bounds.height / CGFloat(rows)) * 1.2
         
         let totalWidth = tileSize * CGFloat(cols)
         let totalHeight = tileSize * CGFloat(rows)
@@ -135,15 +135,20 @@ class MazeGameMediumModeViewController: UIViewController {
             }
         }
         
-        let playerX = xOffset + CGFloat(playerCol) * tileSize + 5
-        let playerY = yOffset + CGFloat(playerRow) * tileSize + 5
         
-        let playerView = UIView(frame: CGRect(x: playerX, y: playerY, width: tileSize - 10, height: tileSize - 10))
-        playerView.backgroundColor = .systemBlue
-        playerView.layer.cornerRadius = min(tileSize - 10, tileSize - 10) / 2
+        let playerX = xOffset + CGFloat(playerCol) * tileSize
+        let playerY = yOffset + CGFloat(playerRow) * tileSize
         
-        mediumMazeBoardView.addSubview(playerView)
+        let playerImageView = UIImageView(frame: CGRect(
+            x: playerX,
+            y: playerY,
+            width: tileSize,
+            height: tileSize
+        ))
+
+        playerImageView.image = UIImage(named: "velociraptor - medium mode")
         
+        mediumMazeBoardView.addSubview(playerImageView)
         // check if player moved
         if playerRow != lastPlayerRow || playerCol != lastPlayerCol {
             moveCount += 1
