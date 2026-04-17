@@ -9,6 +9,8 @@ import UIKit
 
 class MazeGameHardModeViewController: UIViewController {
     
+    var hardMaze: [String] = []
+    
     var hardGameEnded = false
     
     var moveCount = 0
@@ -18,13 +20,13 @@ class MazeGameHardModeViewController: UIViewController {
     @IBOutlet weak var mazeGameHardModeMoveCounter: UILabel!
     
     
-    //@IBAction func mazeGameHardModeRandomPressed(_ sender: Any) {
-        //if let randomMaze = hardMazes.randomElement() {
-            //hardMaze = randomMaze
-        //}
+    @IBAction func mazeGameHardModeRandomPressed(_ sender: Any) {
+        if let randomMaze = hardMazes.randomElement() {
+            hardMaze = randomMaze
+        }
         
-        //resetGame()
-    //}
+        resetGame()
+    }
     
     
     @IBAction func mazeGameHardModeResetPressed(_ sender: Any) {
@@ -41,7 +43,7 @@ class MazeGameHardModeViewController: UIViewController {
     var timerCount = 0
     
     @IBOutlet weak var hardMazeBoardView: UIView!
-    let hardMaze = [
+    let hardMazes = [[
         "############",
         "##.#...#...#",
         "#....#...#.#",
@@ -56,8 +58,38 @@ class MazeGameHardModeViewController: UIViewController {
         "#G..#...#..#",
         "#..#..#...##",
         "############",
-        
-    ]
+    ], [
+        "############",
+        "#.#........#",
+        "#....##..#.#",
+        "#..#.#.#..##",
+        "#.......#..#",
+        "#.#..S##...#",
+        "##........##",
+        "##..#.#....#",
+        "##..G#...#.#",
+        "#....#.#...#",
+        "#.....##..##",
+        "#...#...#..#",
+        "##..#.#....#",
+        "############",
+    ], [
+        "############",
+        "#S..###...G#",
+        "##...#..#.##",
+        "#...#..#...#",
+        "#..#..#..#.#",
+        "#...#...#..#",
+        "##....#...##",
+        "#...#...#..#",
+        "#..###..#..#",
+        "#...#..#...#",
+        "##..###...##",
+        "#..#...#...#",
+        "#....#.....#",
+        "############",
+    ]]
+    
     var playerRow = 0
     var playerCol = 0
     
@@ -240,6 +272,10 @@ class MazeGameHardModeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let randomMaze = hardMazes.randomElement() {
+            hardMaze = randomMaze
+        }
         
         moveCount = 0
         updateMoveCounter()
