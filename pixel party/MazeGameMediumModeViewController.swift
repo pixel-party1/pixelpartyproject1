@@ -18,6 +18,7 @@ class MazeGameMediumModeViewController: UIViewController {
     
     @IBOutlet weak var mazeGameMediumModeMoveCounter: UILabel!
     
+    
     @IBAction func mazeGameMediumModeResetPressed(_ sender: Any) {
         resetGame()
     }

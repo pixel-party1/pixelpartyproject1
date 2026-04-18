@@ -28,7 +28,6 @@ class MazeGameHardModeViewController: UIViewController {
         resetGame()
     }
     
-    
     @IBAction func mazeGameHardModeResetPressed(_ sender: Any) {
         resetGame()
     }
