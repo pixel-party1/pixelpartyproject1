@@ -14,6 +14,15 @@ class SlidingPuzzleViewController: UIViewController {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var redoButton: UIButton!
+    
+    
+    // SOLVE BUTTON TO BE REMOVED FOR FINAL IMPLEMENTATION
+    @IBAction func solveTapped(_ sender: Any) {
+        board.tiles = Array(1..<(board.size * board.size)) + [0]
+        boardView.refresh(board: board)
+        showWinAlert()
+    }
+    
 
     // MARK: - Properties
     private var board = PuzzleBoard(size: 3)
@@ -30,12 +39,12 @@ class SlidingPuzzleViewController: UIViewController {
         super.viewDidLayoutSubviews()
         // boardContainerView's final size isn't known until layout is complete,
         // so we size the boardView here rather than in viewDidLoad
-        boardView.frame = boardContainerView.bounds
     }
 
     // MARK: - Game Logic
     private func startGame(size: Int) {
         board = PuzzleBoard(size: size)
+        board.imageName = "puzzle_image.jpg"
         board.shuffle(steps: shuffleSteps(for: size))
         updateMovesLabel()
         buildBoardView()
@@ -48,6 +57,9 @@ class SlidingPuzzleViewController: UIViewController {
         boardView.frame = boardContainerView.bounds
         boardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         boardContainerView.addSubview(boardView)
+        
+        boardView.setNeedsLayout()
+        boardView.layoutIfNeeded()
         boardView.setup(board: board)
 
         boardView.onMove = { [weak self] index in

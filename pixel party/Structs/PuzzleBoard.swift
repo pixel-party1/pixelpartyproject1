@@ -15,6 +15,7 @@ struct PuzzleBoard {
     var moveCount: Int
     var undoStack: [[Int]] = []  // stores previous tile states
     var redoStack: [[Int]] = []  // stores undone tile states
+    var imageName: String? = nil
     
     // MARK: - Init
     init(size: Int) {

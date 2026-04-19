@@ -11,6 +11,18 @@ final class TileView: UIView {
 
     // MARK: - Properties
     private let numberLabel = UILabel()
+    
+    private let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+
+    var solvedImage: UIImage? = nil {
+        didSet { configure() }
+    }
 
     // didSet means configure() runs automatically whenever value is set from outside
     var value: Int = 0 {
@@ -31,10 +43,18 @@ final class TileView: UIView {
     }
 
     // MARK: - Setup
-    // Runs once on creation. Pins the label to the edges of the tile.
+    // Runs once during initialization to style the tile and pin its image and label subviews.
     private func commonInit() {
         layer.cornerRadius = 8
         backgroundColor = .systemGray5
+        
+        addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
 
         numberLabel.textAlignment = .center
         numberLabel.adjustsFontSizeToFitWidth = true
@@ -42,8 +62,6 @@ final class TileView: UIView {
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(numberLabel)
 
-        // translatesAutoresizingMaskIntoConstraints = false is required any time
-        // you add constraints manually — forgetting it breaks the layout silently
         NSLayoutConstraint.activate([
             numberLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             numberLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
@@ -53,13 +71,26 @@ final class TileView: UIView {
     }
 
     // MARK: - Configure
-    // value == 0 is the blank tile — it should be invisible
+    // value == 0 is the blank tile it will be invisible
     private func configure() {
         if value == 0 {
             backgroundColor = .clear
-            numberLabel.text = ""
+            imageView.isHidden = true
+            numberLabel.isHidden = true
+            return
+        }
+        
+        // image mode
+        if let img = solvedImage {
+            backgroundColor = .clear
+            imageView.image = img
+            imageView.isHidden = false
+            numberLabel.isHidden = true
         } else {
+            //just in case the image mode fails it falls back to numbers
             backgroundColor = .systemGray5
+            imageView.isHidden = true
+            numberLabel.isHidden = false
             numberLabel.text = "\(value)"
             numberLabel.font = UIFont.systemFont(ofSize: fontSize(), weight: .bold)
         }

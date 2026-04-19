@@ -21,7 +21,7 @@ final class BoardView: UIView {
     private var gridSize: Int = 3
     
     // Gap between tiles in points
-    private let gap: CGFloat = 6
+    private let gap: CGFloat = 0
 
     // MARK: - Setup
     
@@ -32,11 +32,13 @@ final class BoardView: UIView {
         subviews.forEach { $0.removeFromSuperview() }
         tileViews.removeAll()
         gridSize = board.size
-
+        
+        let slices = makeSlices(from: board)
         let ts = tileSize()
 
         for i in 0..<(gridSize * gridSize) {
             let tile = TileView()
+            tile.solvedImage = slices[board.tiles[i]]
             tile.value = board.tiles[i]
             tile.frame = frameFor(index: i, tileSize: ts)
             addSubview(tile)
@@ -46,15 +48,65 @@ final class BoardView: UIView {
 
     // MARK: - Refresh
     
-    // Instantly updates every tile's value and position.
-    // Used after a move or shuffle — no animation.
+    // Instantly updates every tiles value and position.
+    // Used after a move or shuffle — no animation
     func refresh(board: PuzzleBoard) {
+        let slices = makeSlices(from: board)
         let ts = tileSize()
         for (i, tile) in tileViews.enumerated() {
+            tile.solvedImage = slices[board.tiles[i]]
             tile.value = board.tiles[i]
             tile.frame = frameFor(index: i, tileSize: ts)
         }
     }
+    
+    // MARK: - Image Slicing
+    private func makeSlices(from board: PuzzleBoard) -> [Int: UIImage] {
+        guard
+            let name  = board.imageName,
+            let image = UIImage(named: name)
+        else {
+            return [:]
+        }
+
+        
+        let n = board.size
+        
+        // Crop to the largest centred square so non-square assets dont distort
+        let shortest = min(image.size.width, image.size.height)
+        let squareCrop = CGRect(
+            x: (image.size.width  - shortest) / 2,
+            y: (image.size.height - shortest) / 2,
+            width:  shortest,
+            height: shortest
+        )
+        let cellSize = shortest / CGFloat(n)
+        
+        var slices: [Int: UIImage] = [:]
+        
+        for tileNumber in 1..<(n * n) {        // 0 is blank — skip
+            let solvedPosition = tileNumber - 1
+            let row = solvedPosition / n
+            let col = solvedPosition % n
+
+            let cropRect = CGRect(
+                x: squareCrop.minX + CGFloat(col) * cellSize,
+                y: squareCrop.minY + CGFloat(row) * cellSize,
+                width:  cellSize,
+                height: cellSize
+            )
+
+            if let cgCrop = image.cgImage?.cropping(to: cropRect) {
+                slices[tileNumber] = UIImage(
+                    cgImage:     cgCrop,
+                    scale:       image.scale,
+                    orientation: image.imageOrientation
+                )
+            }
+        }
+        return slices
+    }
+
 
     // MARK: - Touch Handling
     
@@ -72,8 +124,7 @@ final class BoardView: UIView {
         // Ignore taps outside the valid grid area
         guard row >= 0, row < gridSize, col >= 0, col < gridSize else { return }
 
-        let index = row * gridSize + col
-        onMove?(index)
+        onMove?(row * gridSize + col)
     }
 
     // MARK: - Layout Helpers
