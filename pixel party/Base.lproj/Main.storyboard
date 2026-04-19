@@ -17,58 +17,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-Xm-C5Z">
-                                <rect key="frame" x="136" y="244" width="121" height="365"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLf-CD-JMj">
-                                        <rect key="frame" x="30.000000000000004" y="0.0" width="61.333333333333343" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Start"/>
-                                        <connections>
-                                            <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yob-r3-FNR"/>
-                                            <segue destination="SkY-fV-R0h" kind="presentation" identifier="toGameSelect" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="0v1-Gc-e7t"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-0u-bh3">
-                                        <rect key="frame" x="0.0" y="165.33333333333331" width="121" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Leaderboard"/>
-                                        <connections>
-                                            <action selector="LeaderboardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VSB-zf-pfy"/>
-                                            <segue destination="JPt-Ck-IME" kind="presentation" identifier="toLeaderboard" modalPresentationStyle="fullScreen" id="zrj-bT-xiP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJL-cX-4tW">
-                                        <rect key="frame" x="17" y="330.66666666666663" width="87" height="34.333333333333314"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Settings"/>
-                                        <connections>
-                                            <action selector="SettingsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o2X-1q-hK0"/>
-                                            <segue destination="apL-k4-6u1" kind="presentation" identifier="toSettings" modalPresentationStyle="fullScreen" id="gAb-9X-ZdM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="365" id="FZY-vt-86n"/>
-                                    <constraint firstAttribute="width" constant="121" id="TFm-Zi-8iW"/>
-                                </constraints>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jrH-T1-DVk">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLf-CD-JMj">
+                                <rect key="frame" x="86" y="412" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91976243257522583" green="0.20592172150584523" blue="0.81806023854307808" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yob-r3-FNR"/>
+                                    <segue destination="SkY-fV-R0h" kind="presentation" identifier="toGameSelect" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="0v1-Gc-e7t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-0u-bh3">
+                                <rect key="frame" x="86" y="502" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Leaderboard">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="LeaderboardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VSB-zf-pfy"/>
+                                    <segue destination="JPt-Ck-IME" kind="presentation" identifier="toLeaderboard" modalPresentationStyle="fullScreen" id="zrj-bT-xiP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJL-cX-4tW">
+                                <rect key="frame" x="86" y="591" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Settings">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="SettingsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o2X-1q-hK0"/>
+                                    <segue destination="apL-k4-6u1" kind="presentation" identifier="toSettings" modalPresentationStyle="fullScreen" id="gAb-9X-ZdM"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="transparentLogo.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="0pr-zn-oJv">
+                                <rect key="frame" x="0.0" y="79" width="393" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ztd-Xm-C5Z" secondAttribute="trailing" constant="136" id="4pN-CP-BPn"/>
-                            <constraint firstItem="ztd-Xm-C5Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="Chm-9s-dbZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ztd-Xm-C5Z" secondAttribute="bottom" constant="175" id="rNu-aw-yx0"/>
-                            <constraint firstItem="ztd-Xm-C5Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="126" id="yOW-Tc-D3j"/>
+                            <constraint firstItem="jrH-T1-DVk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HXT-lm-Y8b"/>
+                            <constraint firstItem="jrH-T1-DVk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JJJ-gX-n2a"/>
+                            <constraint firstItem="jrH-T1-DVk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g7h-da-nFm"/>
+                            <constraint firstItem="jrH-T1-DVk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oAW-OR-r5K"/>
+                            <constraint firstAttribute="bottom" secondItem="jrH-T1-DVk" secondAttribute="bottom" id="v0w-3t-6PY"/>
+                            <constraint firstItem="jrH-T1-DVk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xxg-9e-Byd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="arD-Zo-fef"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027" y="132"/>
+            <point key="canvasLocation" x="2026.7175572519084" y="131.69014084507043"/>
         </scene>
         <!--Maze Game Main Menu View Controller-->
         <scene sceneID="fKK-9a-pRQ">
@@ -78,49 +90,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8XF-Ae-hjk">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nL2-aM-sPa">
-                                <rect key="frame" x="99" y="213" width="189" height="41"/>
+                                <rect key="frame" x="86" y="674" width="220" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="How to play">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="BdH-Lt-LCp" kind="presentation" modalPresentationStyle="fullScreen" id="9hy-ED-3t4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-ew-EeA">
-                                <rect key="frame" x="100" y="359" width="186" height="46"/>
+                                <rect key="frame" x="86" y="358" width="220" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Easy">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="bHV-B5-rxe" kind="presentation" modalPresentationStyle="fullScreen" id="J3P-pm-fpQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZx-TR-d2f">
-                                <rect key="frame" x="103" y="433" width="186" height="46"/>
+                                <rect key="frame" x="86" y="435" width="220" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Medium">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="hqC-dt-fz2" kind="presentation" modalPresentationStyle="fullScreen" id="YA4-MQ-4nj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp0-EZ-ptZ">
-                                <rect key="frame" x="99" y="512" width="186" height="46"/>
+                                <rect key="frame" x="86" y="514" width="220" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Hard">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="0Mm-cl-CvF" kind="presentation" modalPresentationStyle="fullScreen" id="7uK-8g-AqH"/>
@@ -129,19 +144,37 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkp-kn-kFG">
                                 <rect key="frame" x="27" y="100" width="55" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="mainMenuButtonTapped:" destination="zEf-Ef-FPI" eventType="touchUpInside" id="G5q-Cm-qBo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maze-Game" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF0-i6-RS2">
+                                <rect key="frame" x="20" y="226" width="353" height="20.333333333333485"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R2H-W5-Xkk"/>
                         <color key="backgroundColor" red="0.62489913196265656" green="0.76942896842956543" blue="0.58375175410376223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8XF-Ae-hjk" secondAttribute="bottom" id="G45-2y-7GV"/>
+                            <constraint firstItem="8XF-Ae-hjk" firstAttribute="top" secondItem="TbX-Em-tbC" secondAttribute="top" id="Ylc-34-LEd"/>
+                            <constraint firstItem="8XF-Ae-hjk" firstAttribute="leading" secondItem="R2H-W5-Xkk" secondAttribute="leading" id="ahN-D5-ap3"/>
+                            <constraint firstItem="8XF-Ae-hjk" firstAttribute="trailing" secondItem="R2H-W5-Xkk" secondAttribute="trailing" id="i2R-uS-MdO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ttW-Lp-yeM"/>
+                    <connections>
+                        <outlet property="mazeGameTitleLabel" destination="iF0-i6-RS2" id="6Cn-OV-TAt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kO3-Q3-Nzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -395,33 +428,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-8c-cys">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-Up-FMl">
                                 <rect key="frame" x="45" y="76" width="55" height="34.333333333333343"/>
-                                <color key="backgroundColor" red="0.62489913200000002" green="0.76942896839999997" blue="0.58375175410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="house.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="howToPlayButtonTapped:" destination="BdH-Lt-LCp" eventType="touchUpInside" id="UKB-d7-nGl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Il-8V-OKY">
-                                <rect key="frame" x="16" y="201" width="361" height="466"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc4-Du-yV2">
+                                <rect key="frame" x="151.66666666666666" y="169" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl5-C1-A4M">
+                                <rect key="frame" x="50" y="250" width="293" height="20"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <color key="highlightedColor" red="0.09088207559" green="0.059289487430000003" blue="0.28983191289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1eU-jX-CUc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Dfm-Up-FMl" firstAttribute="top" secondItem="1eU-jX-CUc" secondAttribute="top" constant="17" id="5DT-He-Ikr"/>
+                            <constraint firstItem="Bc4-Du-yV2" firstAttribute="top" secondItem="1eU-jX-CUc" secondAttribute="top" constant="110" id="FhM-4t-Fnx"/>
+                            <constraint firstItem="5w0-8c-cys" firstAttribute="trailing" secondItem="1eU-jX-CUc" secondAttribute="trailing" id="IL0-5q-TKQ"/>
+                            <constraint firstItem="5w0-8c-cys" firstAttribute="top" secondItem="fbA-UE-hrk" secondAttribute="top" id="Uan-mv-Bsz"/>
+                            <constraint firstItem="1eU-jX-CUc" firstAttribute="trailing" secondItem="jl5-C1-A4M" secondAttribute="trailing" constant="50" id="Wgp-G5-hL1"/>
+                            <constraint firstItem="Bc4-Du-yV2" firstAttribute="centerX" secondItem="fbA-UE-hrk" secondAttribute="centerX" id="ZOv-lY-bCH"/>
+                            <constraint firstItem="jl5-C1-A4M" firstAttribute="leading" secondItem="1eU-jX-CUc" secondAttribute="leading" constant="50" id="enx-QE-CLk"/>
                             <constraint firstItem="Dfm-Up-FMl" firstAttribute="leading" secondItem="1eU-jX-CUc" secondAttribute="leading" constant="45" id="g0J-qC-q6F"/>
+                            <constraint firstItem="jl5-C1-A4M" firstAttribute="top" secondItem="Bc4-Du-yV2" secondAttribute="bottom" constant="60" id="lOc-vq-dxo"/>
+                            <constraint firstItem="5w0-8c-cys" firstAttribute="leading" secondItem="1eU-jX-CUc" secondAttribute="leading" id="wo5-nU-MWZ"/>
+                            <constraint firstAttribute="bottom" secondItem="5w0-8c-cys" secondAttribute="bottom" id="ySf-QT-pQY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mazeGameHowTo" destination="8Il-8V-OKY" id="4Sj-Mu-h6v"/>
+                        <outlet property="mazeGameHowTo" destination="jl5-C1-A4M" id="S1A-Y2-hUh"/>
+                        <outlet property="mazeGameHowToTitle" destination="Bc4-Du-yV2" id="EJc-sm-hf0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqN-7R-dw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -436,47 +490,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="z17-AH-9eC">
-                                <rect key="frame" x="125" y="244" width="142" height="365"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IP1-Ml-MSn">
-                                        <rect key="frame" x="12.33333333333335" y="0.0" width="117.66666666666669" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Maze-Game"/>
-                                        <connections>
-                                            <segue destination="zEf-Ef-FPI" kind="presentation" identifier="toMazeGame" modalPresentationStyle="fullScreen" id="iAF-rB-fLQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybh-an-K02">
-                                        <rect key="frame" x="0.0" y="165.33333333333331" width="142" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Memory-Match"/>
-                                        <connections>
-                                            <segue destination="bqS-65-jEs" kind="presentation" modalPresentationStyle="fullScreen" id="P5h-hv-fyC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjM-jx-Gp3">
-                                        <rect key="frame" x="12.999999999999993" y="330.66666666666663" width="116.33333333333331" height="34.333333333333314"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Slide Puzzle"/>
-                                        <connections>
-                                            <segue destination="aMq-0p-c0L" kind="presentation" identifier="toSlidingPuzzle" modalPresentationStyle="fullScreen" id="USJ-IN-SlW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="365" id="lb2-cL-G05"/>
-                                    <constraint firstAttribute="width" constant="142" id="qum-rZ-mwC"/>
-                                </constraints>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tyw-VU-jKt">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iv-md-Q7H">
                                 <rect key="frame" x="16" y="59" width="55" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="house.fill" catalog="system" renderingMode="hierarchical">
                                         <hierarchicalColors>
-                                            <color systemColor="labelColor"/>
+                                            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color systemColor="secondaryLabelColor"/>
                                             <color systemColor="tertiaryLabelColor"/>
                                         </hierarchicalColors>
@@ -487,18 +512,64 @@
                                     <action selector="toHome:" destination="SkY-fV-R0h" eventType="touchUpInside" id="XyV-ah-E0W"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IP1-Ml-MSn">
+                                <rect key="frame" x="87" y="300" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Maze-Game ">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="zEf-Ef-FPI" kind="presentation" identifier="toMazeGame" modalPresentationStyle="fullScreen" id="iAF-rB-fLQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybh-an-K02">
+                                <rect key="frame" x="87" y="401" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Memory-Match">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="bqS-65-jEs" kind="presentation" modalPresentationStyle="fullScreen" id="P5h-hv-fyC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjM-jx-Gp3">
+                                <rect key="frame" x="87" y="500" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Slide Puzzle">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="aMq-0p-c0L" kind="presentation" identifier="toSlidingPuzzle" modalPresentationStyle="fullScreen" id="USJ-IN-SlW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Game" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyR-Ev-rbB">
+                                <rect key="frame" x="21" y="202" width="353" height="20.333333333333258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="660-cx-qe5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="z17-AH-9eC" firstAttribute="top" secondItem="660-cx-qe5" secondAttribute="top" constant="185" id="Gne-q1-Bgx"/>
-                            <constraint firstItem="660-cx-qe5" firstAttribute="trailing" secondItem="z17-AH-9eC" secondAttribute="trailing" constant="126" id="crK-ca-0DD"/>
-                            <constraint firstItem="660-cx-qe5" firstAttribute="bottom" secondItem="z17-AH-9eC" secondAttribute="bottom" constant="209" id="nPT-W5-dej"/>
-                            <constraint firstItem="z17-AH-9eC" firstAttribute="leading" secondItem="660-cx-qe5" secondAttribute="leading" constant="125" id="rbR-NE-E1j"/>
+                            <constraint firstItem="tyw-VU-jKt" firstAttribute="trailing" secondItem="660-cx-qe5" secondAttribute="trailing" id="cUG-r1-0Qw"/>
+                            <constraint firstItem="tyw-VU-jKt" firstAttribute="top" secondItem="0y2-JU-fZp" secondAttribute="top" id="iHl-hN-pVf"/>
+                            <constraint firstItem="tyw-VU-jKt" firstAttribute="leading" secondItem="660-cx-qe5" secondAttribute="leading" id="rpn-PR-rvS"/>
+                            <constraint firstAttribute="bottom" secondItem="tyw-VU-jKt" secondAttribute="bottom" id="vvC-Sn-xqD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nSz-9A-Euf"/>
+                    <connections>
+                        <outlet property="selectGameLabel" destination="IyR-Ev-rbB" id="YXp-aO-dOy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhI-ca-1dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -531,8 +602,8 @@
                                     <action selector="memoryMatchHomeButtonPressed:" destination="bqS-65-jEs" eventType="touchUpInside" id="2Rp-Ds-KMA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baG-5Y-GR3">
-                                <rect key="frame" x="86.666666666666686" y="359.33333333333331" width="220" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baG-5Y-GR3">
+                                <rect key="frame" x="86.666666666666742" y="360.33333333333348" width="220" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="7Wi-V1-yye"/>
                                     <constraint firstAttribute="height" constant="50" id="bmI-07-M9f"/>
@@ -687,6 +758,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Easy 🍕">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -2246,20 +2318,24 @@
         <image name="medium nature background.png" width="304.5" height="463.5"/>
         <image name="night background.jpg" width="129.60000610351562" height="86.400001525878906"/>
         <image name="shuffle" catalog="system" width="128" height="95"/>
+        <image name="transparentLogo.PNG" width="768" height="768"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

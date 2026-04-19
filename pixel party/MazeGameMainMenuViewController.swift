@@ -9,11 +9,14 @@ import UIKit
 
 class MazeGameMainMenuViewController: UIViewController {
 
+    @IBOutlet weak var mazeGameTitleLabel: UILabel!
     
     @IBAction func mainMenuButtonTapped(_ sender: Any) {dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mazeGameTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 28)
 
         // Do any additional setup after loading the view.
     }

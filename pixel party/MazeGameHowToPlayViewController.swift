@@ -13,22 +13,31 @@ class MazeGameHowToPlayViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBOutlet weak var mazeGameHowToTitle: UILabel!
+    
+    
     @IBOutlet weak var mazeGameHowTo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mazeGameHowTo.numberOfLines = 0
+        mazeGameHowToTitle.font = UIFont(name: "Kenney-Rocket", size: 28)
         
-        mazeGameHowTo.text="""
-            Welcome to the Maze Game!!!
-            
-            The idea is simple,
-            
-            You want to get to the gold block but be warned when you slide you go all the way to the wall!
-            
-            Your moves are counted and there will be a timer so be quick!
-            """
+        mazeGameHowTo.font = UIFont(name: "Kenney-Rocket", size: 18)
+        mazeGameHowTo.text = """
+        🟨 Maze Slider 🟨
+
+        1️⃣ Slide in a direction and keep moving until you hit a wall 🧱
+
+        2️⃣ Plan your moves carefully — you can’t stop mid-slide 🧠
+
+        3️⃣ Reach the yellow block to win 🌟
+
+        4️⃣ Avoid getting stuck in tricky spots ⚠️
+
+        5️⃣ Have fun! 💥
+        """
     }
     
 

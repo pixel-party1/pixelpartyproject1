@@ -14,9 +14,14 @@ class GameSelectViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBOutlet weak var selectGameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    // Do any additional setup after loading the view.
+        
+        selectGameLabel.font = UIFont(name: "Kenney-Rocket", size: 32)
+    
     }
 }
 
