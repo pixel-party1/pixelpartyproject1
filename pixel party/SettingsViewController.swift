@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var settingsTitleLabel: UILabel!
     
     @IBAction func toHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -29,6 +30,9 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingsTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 32)
+        
         loginButton.isHidden = true
         registerButton.isHidden = true
         userLabel.isHidden = true

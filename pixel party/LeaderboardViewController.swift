@@ -9,6 +9,8 @@ import UIKit
 
 class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var leaderboardTitleLabel: UILabel!
+    
     @IBAction func toHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -30,6 +32,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        leaderboardTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 28)
         tableView.delegate = self
         tableView.dataSource = self
         
