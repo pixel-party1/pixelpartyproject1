@@ -9,9 +9,24 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    
+    @IBAction func settingsToggleMusic(_ sender: UISwitch) {
+        AudioManager.shared.playButtonClick()
+        UserDefaults.standard.set(true, forKey: "musicOn")
+        
+            if sender.isOn {
+                AudioManager.shared.playMusic()
+                UserDefaults.standard.set(true, forKey: "musicOn")
+            } else {
+                AudioManager.shared.stopMusic()
+                UserDefaults.standard.set(false, forKey: "musicOn")
+        }
+    }
+    
     @IBOutlet weak var settingsTitleLabel: UILabel!
     
     @IBAction func toHome(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -21,6 +36,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var signOutButton: UIButton!
     
     @IBAction func signOut(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         UserDefaults.standard.set(false, forKey: "signedIn")
         loginButton.isHidden = false
         registerButton.isHidden = false
@@ -30,6 +46,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         settingsTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 32)
         

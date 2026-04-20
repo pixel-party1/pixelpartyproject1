@@ -13,6 +13,7 @@ class MemoryMatchHardModeViewController: UIViewController {
     
     // go back to previous screen
     @IBAction func memoryMatchHardModeBackButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -190,6 +191,7 @@ class MemoryMatchHardModeViewController: UIViewController {
     }
     
     @IBAction func cardTapped(_ sender: UIButton) {
+        AudioManager.shared.playCardFlip()
         
         if let index = buttons.firstIndex(of: sender) {
                 
@@ -286,8 +288,10 @@ class MemoryMatchHardModeViewController: UIViewController {
         //stop timer so final time is frozen
         timer?.invalidate()
         timer = nil
+        
+        AudioManager.shared.playWin()
             
-        let alert = UIAlertController(title: "You Win! 🎉",
+        let alert = UIAlertController(title: "You Win!",
                                       message: "You matched all the pairs!",
                                       preferredStyle: .alert)
         

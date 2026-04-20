@@ -12,6 +12,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var leaderboardTitleLabel: UILabel!
     
     @IBAction func toHome(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     

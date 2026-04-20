@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     var userExists: Bool = false
     
     @IBAction func backToSettings(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -23,6 +24,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func submit(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         userExists = false
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""

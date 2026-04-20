@@ -11,6 +11,7 @@ class MemoryMatchHowToPlayViewController: UIViewController {
     
     
     @IBAction func memoryMatchHowToPlayBackButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -27,17 +28,22 @@ class MemoryMatchHowToPlayViewController: UIViewController {
         
         memoryMatchInstructionsLabel.font = UIFont(name: "Kenney-Rocket", size: 18)
         memoryMatchInstructionsLabel.text = """
-        🃏 Memory Match 🃏
+        +--------------------------------------+
+        |           MEMORY MATCH               |
+        +--------------------------------------+
 
-        1️⃣ Flip cards to reveal their faces
-        
-        2️⃣ Match pairs to score points ✨
-        
-        3️⃣ Be quick! 🕒 The faster you match, the higher your score
-        
-        4️⃣ Match all cards to win 🎉
-        
-        5️⃣ Have fun! 💥
+         1) Flip cards to reveal their faces
+
+         2) Match pairs to score points
+
+         3) Be quick! The faster you match,
+            the higher your score
+
+         4) Match all cards to win
+
+         5) Have fun!
+
+        +--------------------------------------+
         """
     }
     

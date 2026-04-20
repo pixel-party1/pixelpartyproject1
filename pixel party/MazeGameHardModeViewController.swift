@@ -21,6 +21,7 @@ class MazeGameHardModeViewController: UIViewController {
     
     
     @IBAction func mazeGameHardModeRandomPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         if let randomMaze = hardMazes.randomElement() {
             hardMaze = randomMaze
         }
@@ -29,10 +30,12 @@ class MazeGameHardModeViewController: UIViewController {
     }
     
     @IBAction func mazeGameHardModeResetPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         resetGame()
     }
     
     @IBAction func hardModeButtonTapped(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -139,11 +142,11 @@ class MazeGameHardModeViewController: UIViewController {
                 
                 let character = currentRow[col]
                 if character == "#" {
-                    tileView.backgroundColor = .black
+                    tileView.backgroundColor = .clear
                 } else if character == "G" {
                     tileView.backgroundColor = .yellow
                 } else {
-                    tileView.backgroundColor = .lightGray
+                    tileView.backgroundColor = UIColor(red: 0.729, green: 0.616, blue: 0.498, alpha: 1.0)
                 }
                 
                 tileView.layer.borderWidth = 1
@@ -201,6 +204,7 @@ class MazeGameHardModeViewController: UIViewController {
         if character == "G"{
             hardGameEnded = true
             timer?.invalidate()
+            AudioManager.shared.playWin()
             let alert = UIAlertController(title: "YOU WIN!!", message: "Hard Maze complete", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -211,6 +215,7 @@ class MazeGameHardModeViewController: UIViewController {
     //swiping gesture assignment
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if hardGameEnded {return}
         slideUp()
         drawHardMaze()
@@ -219,6 +224,7 @@ class MazeGameHardModeViewController: UIViewController {
     
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if hardGameEnded {return}
         slideDown()
         drawHardMaze()
@@ -226,12 +232,14 @@ class MazeGameHardModeViewController: UIViewController {
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if hardGameEnded {return}
         slideLeft()
         drawHardMaze()
         checkWin()
     }
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if hardGameEnded {return}
         slideRight()
         drawHardMaze()
@@ -304,11 +312,17 @@ class MazeGameHardModeViewController: UIViewController {
         let minutes = timerCount / 60
         
         mazeGameHardModeTimer.text = String(format: "%02d:%02d", minutes, seconds)
+        mazeGameHardModeTimer.font = UIFont(name: "Kenney-Rocket",size:24)
+        mazeGameHardModeTimer.layer.cornerRadius = 10
+        mazeGameHardModeTimer.layer.masksToBounds = true
 
     }
     
     func updateMoveCounter() {
         mazeGameHardModeMoveCounter.text = "Moves: \(moveCount)"
+        mazeGameHardModeMoveCounter.font = UIFont(name: "Kenney-Rocket",size:24)
+        mazeGameHardModeMoveCounter.layer.cornerRadius = 10
+        mazeGameHardModeMoveCounter.layer.masksToBounds = true
     }
     
     func resetGame() {

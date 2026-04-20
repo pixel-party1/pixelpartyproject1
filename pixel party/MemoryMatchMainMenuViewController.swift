@@ -15,6 +15,7 @@ class MemoryMatchMainMenuViewController: UIViewController {
     @IBOutlet weak var memoryMatchPlayButtonText: UIButton!
     
     @IBAction func memoryMatchHomeButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -23,9 +24,11 @@ class MemoryMatchMainMenuViewController: UIViewController {
     
     
     @IBAction func memoryMatchPlayButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
     }
     
     @IBAction func memoryMatchHowToPlayButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
     }
     
     

@@ -8,9 +8,20 @@
 import UIKit
 
 class MazeGameLevelSelectViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var mazeGameLevelSelectLabel: UILabel!
+    
+    @IBAction func mazeGameLevelSelectHomeButtonTapped(_ sender: UIButton) {
+        AudioManager.shared.playButtonClick()
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mazeGameLevelSelectLabel.font = UIFont(name: "Kenney-Rocket", size: 28)
+
 
         // Do any additional setup after loading the view.
     }

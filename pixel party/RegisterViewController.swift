@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     var userExists: Bool = false
 
     @IBAction func backToSettings(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     

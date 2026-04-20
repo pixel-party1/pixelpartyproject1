@@ -20,11 +20,13 @@ class MazeGameMediumModeViewController: UIViewController {
     
     
     @IBAction func mazeGameMediumModeResetPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         resetGame()
     }
     
     
     @IBAction func mazeGameMediumModeRandomPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         if let randomMaze = mediumMazes.randomElement() {
             mediumMaze = randomMaze
         }
@@ -33,6 +35,7 @@ class MazeGameMediumModeViewController: UIViewController {
     }
     
     @IBAction func mediumModeButtonTapped(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -122,7 +125,7 @@ class MazeGameMediumModeViewController: UIViewController {
                 
                 let character = currentRow[col]
                 if character == "#" {
-                    tileView.backgroundColor = .black
+                    tileView.backgroundColor = .clear
                 } else if character == "G" {
                     tileView.backgroundColor = .yellow
                 } else {
@@ -185,6 +188,7 @@ class MazeGameMediumModeViewController: UIViewController {
         if character == "G"{
             mediumGameEnded = true
             timer?.invalidate()
+            AudioManager.shared.playWin()
             let alert = UIAlertController(title: "YOU WIN!!", message: "Medium Maze complete", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -193,6 +197,7 @@ class MazeGameMediumModeViewController: UIViewController {
     }
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if mediumGameEnded {return}
         slideUp()
         drawMediumMaze()
@@ -200,6 +205,7 @@ class MazeGameMediumModeViewController: UIViewController {
     }
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if mediumGameEnded {return}
         slideDown()
         drawMediumMaze()
@@ -207,6 +213,7 @@ class MazeGameMediumModeViewController: UIViewController {
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if mediumGameEnded {return}
         slideLeft()
         drawMediumMaze()
@@ -215,6 +222,7 @@ class MazeGameMediumModeViewController: UIViewController {
     
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if mediumGameEnded {return}
         slideRight()
         drawMediumMaze()
@@ -279,11 +287,17 @@ class MazeGameMediumModeViewController: UIViewController {
         let minutes = timerCount / 60
         
         mazeGameMediumModeTimer.text = String(format: "%02d:%02d", minutes, seconds)
+        mazeGameMediumModeTimer.font = UIFont(name: "Kenney-Rocket",size:24)
+        mazeGameMediumModeTimer.layer.cornerRadius = 10
+        mazeGameMediumModeTimer.layer.masksToBounds = true
 
     }
     
     func updateMoveCounter() {
         mazeGameMediumModeMoveCounter.text = "Moves: \(moveCount)"
+        mazeGameMediumModeMoveCounter.font = UIFont(name: "Kenney-Rocket",size:24)
+        mazeGameMediumModeMoveCounter.layer.cornerRadius = 10
+        mazeGameMediumModeMoveCounter.layer.masksToBounds = true
     }
     
     func resetGame() {

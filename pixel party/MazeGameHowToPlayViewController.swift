@@ -10,6 +10,7 @@ import UIKit
 class MazeGameHowToPlayViewController: UIViewController {
 
     @IBAction func howToPlayButtonTapped(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     
@@ -24,19 +25,28 @@ class MazeGameHowToPlayViewController: UIViewController {
         
         mazeGameHowToTitle.font = UIFont(name: "Kenney-Rocket", size: 28)
         
+
+        
         mazeGameHowTo.font = UIFont(name: "Kenney-Rocket", size: 18)
         mazeGameHowTo.text = """
-        🟨 Maze Slider 🟨
+        +--------------------------------------+
+        |            MAZE SLIDER               |
+        +--------------------------------------+
 
-        1️⃣ Slide in a direction and keep moving until you hit a wall 🧱
+         1) Slide in a direction and keep
+            moving until you hit a wall
 
-        2️⃣ Plan your moves carefully — you can’t stop mid-slide 🧠
+         2) Plan your moves carefully —
+            you cannot stop mid-slide
 
-        3️⃣ Reach the yellow block to win 🌟
+         3) Reach the yellow block to win
 
-        4️⃣ Avoid getting stuck in tricky spots ⚠️
+         4) Avoid getting stuck in tricky
+            spots
 
-        5️⃣ Have fun! 💥
+         5) Have fun!
+
+        +--------------------------------------+
         """
     }
     

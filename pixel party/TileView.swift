@@ -11,9 +11,21 @@ final class TileView: UIView {
 
     // MARK: - Properties
     private let numberLabel = UILabel()
+    
+    private let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
 
     // didSet means configure() runs automatically whenever value is set from outside
     var value: Int = 0 {
+        didSet { configure() }
+    }
+    
+    var solvedImage: UIImage? = nil {
         didSet { configure() }
     }
 
@@ -36,6 +48,14 @@ final class TileView: UIView {
         layer.cornerRadius = 8
         backgroundColor = .systemGray5
 
+        addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+
         numberLabel.textAlignment = .center
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.3
@@ -57,9 +77,22 @@ final class TileView: UIView {
     private func configure() {
         if value == 0 {
             backgroundColor = .clear
-            numberLabel.text = ""
+            imageView.isHidden = true
+            numberLabel.isHidden = true
+            return
+        }
+
+        // image mode
+        if let img = solvedImage {
+            backgroundColor = .clear
+            imageView.image = img
+            imageView.isHidden = false
+            numberLabel.isHidden = true
         } else {
+            // fallback to numbers
             backgroundColor = .systemGray5
+            imageView.isHidden = true
+            numberLabel.isHidden = false
             numberLabel.text = "\(value)"
             numberLabel.font = UIFont.systemFont(ofSize: fontSize(), weight: .bold)
         }

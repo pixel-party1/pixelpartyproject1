@@ -11,6 +11,7 @@ class MemoryMatchPlayViewController: UIViewController {
     
     
     @IBAction func memoryMatchPlayBackButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     

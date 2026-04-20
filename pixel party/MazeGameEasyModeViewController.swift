@@ -21,6 +21,7 @@ class MazeGameEasyModeViewController: UIViewController {
     
     
     @IBAction func mazeGameEasyModeRandomPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         if let randomMaze = easyMazes.randomElement() {
             easyMaze = randomMaze
         }
@@ -29,14 +30,18 @@ class MazeGameEasyModeViewController: UIViewController {
     }
     
     @IBAction func mazeGameEasyModeResetPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         resetGame()
     }
     
     // adding the buttons or links needed
-    @IBAction func easyModeButtonTapped(_ sender: Any) {dismiss(animated: true, completion: nil)
+    @IBAction func easyModeButtonTapped(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var mazeGameEasyModeTimer: UILabel!
+    
     
     var timer: Timer?
     var timerCount = 0
@@ -124,11 +129,11 @@ class MazeGameEasyModeViewController: UIViewController {
                 
                 let character = currentRow[col]
                 if character == "#"{
-                    tileView.backgroundColor = UIColor.black
+                    tileView.backgroundColor = UIColor.clear
                 } else if character == "G"{
                     tileView.backgroundColor = UIColor.yellow
                 } else {
-                    tileView.backgroundColor = UIColor.lightGray
+                    tileView.backgroundColor = UIColor(red: 0.765, green: 0.835, blue: 0.529, alpha: 1.0)
                 }
                 
                 tileView.layer.borderWidth = 1
@@ -181,6 +186,7 @@ class MazeGameEasyModeViewController: UIViewController {
     //swiping gesture recognistion
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if easyGameEnded {return}
         slideUp()
         drawEasyMaze()
@@ -189,6 +195,7 @@ class MazeGameEasyModeViewController: UIViewController {
     
     
     @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if easyGameEnded {return}
         slideDown()
         drawEasyMaze()
@@ -197,6 +204,7 @@ class MazeGameEasyModeViewController: UIViewController {
     
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if easyGameEnded {return}
         slideLeft()
         drawEasyMaze()
@@ -205,6 +213,7 @@ class MazeGameEasyModeViewController: UIViewController {
     
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        AudioManager.shared.playSlide()
         if easyGameEnded {return}
         slideRight()
         drawEasyMaze()
@@ -243,6 +252,7 @@ class MazeGameEasyModeViewController: UIViewController {
         if character == "G"{
             easyGameEnded = true
             timer?.invalidate()
+            AudioManager.shared.playWin()
             let alert = UIAlertController(title: "YOU WIN!!", message: "Easy Maze complete", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
@@ -286,11 +296,17 @@ class MazeGameEasyModeViewController: UIViewController {
         let minutes = timerCount / 60
         
         mazeGameEasyModeTimer.text = String(format: "%02d:%02d", minutes, seconds)
+        mazeGameEasyModeTimer.font = UIFont(name: "Kenney-Rocket",size:24)
+        mazeGameEasyModeTimer.layer.cornerRadius = 10
+        mazeGameEasyModeTimer.layer.masksToBounds = true
 
     }
     
     func updateMoveCounter() {
         mazeGameEasyModeMoveCounter.text = "Moves: \(moveCount)"
+        mazeGameEasyModeMoveCounter.font = UIFont(name: "Kenney-Rocket",size:24)
+        mazeGameEasyModeMoveCounter.layer.cornerRadius = 10
+        mazeGameEasyModeMoveCounter.layer.masksToBounds = true
     }
     
     func resetGame() {

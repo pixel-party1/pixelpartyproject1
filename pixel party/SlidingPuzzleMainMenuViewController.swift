@@ -8,10 +8,20 @@
 import UIKit
 
 class SlidingPuzzleMainMenuViewController: UIViewController {
-
+    
+    
+    @IBAction func slidingPuzzleMainMenuHomeButtonPressed(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBOutlet weak var slidingPuzzleTitleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        slidingPuzzleTitleLabel.font = UIFont(name: "Kenney-Rocket", size: 28)
         // Do any additional setup after loading the view.
     }
     

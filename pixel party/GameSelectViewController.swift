@@ -11,6 +11,7 @@ class GameSelectViewController: UIViewController {
     
 
     @IBAction func toHome(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
         dismiss(animated: true, completion: nil)
     }
     

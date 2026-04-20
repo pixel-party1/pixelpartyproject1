@@ -8,7 +8,15 @@
 import UIKit
 
 class SlidingPuzzleViewController: UIViewController {
-
+    
+    
+    @IBAction func solveTapped(_ sender: Any) {
+        AudioManager.shared.playButtonClick()
+        board.tiles = Array(1..<(board.size * board.size)) + [0]
+        boardView.refresh(board: board)
+        showWinAlert()
+    }
+    
     // MARK: - Outlets
     @IBOutlet weak var boardContainerView: UIView!
     @IBOutlet weak var movesLabel: UILabel!
@@ -30,12 +38,13 @@ class SlidingPuzzleViewController: UIViewController {
         super.viewDidLayoutSubviews()
         // boardContainerView's final size isn't known until layout is complete,
         // so we size the boardView here rather than in viewDidLoad
-        boardView.frame = boardContainerView.bounds
+
     }
 
     // MARK: - Game Logic
     private func startGame(size: Int) {
         board = PuzzleBoard(size: size)
+        board.imageName = "puzzle_image.jpg"
         board.shuffle(steps: shuffleSteps(for: size))
         updateMovesLabel()
         buildBoardView()
@@ -48,6 +57,8 @@ class SlidingPuzzleViewController: UIViewController {
         boardView.frame = boardContainerView.bounds
         boardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         boardContainerView.addSubview(boardView)
+        boardView.setNeedsLayout()
+        boardView.layoutIfNeeded()
         boardView.setup(board: board)
 
         boardView.onMove = { [weak self] index in
@@ -119,10 +130,12 @@ class SlidingPuzzleViewController: UIViewController {
     // MARK: - Labels
     private func updateMovesLabel() {
         movesLabel.text = "Moves: \(board.moveCount)"
+        movesLabel.font = UIFont(name: "Kenney-Rocket", size: 20)
     }
 
     // MARK: - Win
     private func showWinAlert() {
+        AudioManager.shared.playWin()
         let alert = UIAlertController(
             title: "Solved!",
             message: "You completed the puzzle in \(board.moveCount) moves.",
